@@ -1,4 +1,9 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\ConsoleApp",
+    "\\ConsoleApp\\Week1_Task1"
+  ],
+  "SelectedNode": "\\ConsoleApp\\Week1_Task1\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
