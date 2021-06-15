@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task3\\Task3.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task3\\Task3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task3\\Task3.csproj": {
+    "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task3\\Task3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task3\\Task3.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task3\\Task3.csproj",
         "projectName": "Task3",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task3\\Task3.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task3\\Task3.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task3\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

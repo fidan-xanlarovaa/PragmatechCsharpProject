@@ -17,7 +17,7 @@ namespace Task3
             Console.WriteLine("Enter third letter");
             letter3 = Console.ReadLine();
 
-            Console.WriteLine(letter3+" "+ letter2 + " " + letter1);
+            Console.WriteLine($"{letter3} {letter2} {letter1}");
 
         }
     }

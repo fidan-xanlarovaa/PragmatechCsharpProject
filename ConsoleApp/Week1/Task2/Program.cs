@@ -17,13 +17,13 @@ namespace Week1_Task2
             Console.WriteLine("Enter your surname");
             surname = Console.ReadLine();
 
-            Console.WriteLine("Enter your surname");
+            Console.WriteLine("Enter your age");
             age = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter your University");
             uni = Console.ReadLine();
 
-            Console.WriteLine("Hello. My name is " + name + " " + surname + ". I am " + age + ". I study in " + uni + ".");
+            Console.WriteLine($"Hello. My name is {name} {surname}. I am {age}. I study in {uni}.");
         }
     }
 }

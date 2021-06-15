@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task4\\Task4.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task4\\Task4.csproj",
       "projectName": "Task4",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task4\\Task4.csproj",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task4\\Task4.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Task4\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\Pragmatech_Csharp03_ConsoleAppp\\ConsoleApp\\Week1\\Task4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

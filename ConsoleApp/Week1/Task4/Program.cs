@@ -17,7 +17,7 @@ namespace Task4
             surname = Console.ReadLine();
 
 
-            Console.WriteLine("Hello, " + name + " " + surname + ". ");
+            Console.WriteLine($"Hello, {name} {surname}. ");
         }
     }
 }
