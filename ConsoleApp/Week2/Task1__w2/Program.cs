@@ -31,7 +31,7 @@ namespace Task1__w2
 
             
             if(uName==user.Username && uPass==user.Password){
-              Console.WriteLine("sayta xosh gelmisiniz);
+              Console.WriteLine("sayta xosh gelmisiniz");
             }
             
             else{
