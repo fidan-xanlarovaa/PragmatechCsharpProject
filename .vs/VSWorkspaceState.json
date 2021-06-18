@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ConsoleApp",
-    "\\ConsoleApp\\Week1",
-    "\\ConsoleApp\\Week1\\Task1",
-    "\\ConsoleApp\\Week2",
-    "\\ConsoleApp\\Week2\\Task4__w2"
+    "\\ConsoleApplication",
+    "\\ConsoleApplication\\Week1_Task1"
   ],
-  "SelectedNode": "\\ConsoleApp\\Week1\\Task1",
+  "SelectedNode": "\\ConsoleApplication\\ConsoleApplication.sln",
   "PreviewInSolutionExplorer": false
 }
