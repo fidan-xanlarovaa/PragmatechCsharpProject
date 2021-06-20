@@ -8,12 +8,12 @@ namespace Week3_Task3
         {
             int number, numberOfAttempts=0;
             Random randomNumber = new Random();
-            int random = randomNumber.Next(10);
+            int random = randomNumber.Next(50);
             Console.WriteLine(random);
 
             do
             {
-                Console.WriteLine("Pls enteryour guess");
+                Console.WriteLine("Pls enteryour guess between 0 and 50");
                 number = Convert.ToInt32(Console.ReadLine());
                 numberOfAttempts++;
                 if (number < random)
