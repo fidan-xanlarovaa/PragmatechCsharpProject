@@ -6,7 +6,43 @@ namespace Week3_Task3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int number, numberOfAttempts=0;
+            Random randomNumber = new Random();
+            int random = randomNumber.Next(10);
+            Console.WriteLine(random);
+
+            do
+            {
+                Console.WriteLine("Pls enteryour guess");
+                number = Convert.ToInt32(Console.ReadLine());
+                numberOfAttempts++;
+                if (number < random)
+                {
+                    Console.WriteLine("Your guess is less than the actual number");
+                }
+
+                if (number > random)
+                {
+                    Console.WriteLine("Your guess is more than the actual number");
+                }
+
+
+
+                if (numberOfAttempts == 5)
+                {
+                    Console.WriteLine($"Your guessing chance is over. The number was {random}");
+                    break;
+                }
+
+                if (number == random)
+                {
+                    Console.WriteLine("Congratulations you find the number");
+                    break;
+
+                }
+
+            } while (number!=random);
+            
         }
     }
 }
