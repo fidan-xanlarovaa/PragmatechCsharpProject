@@ -10,3 +10,4 @@ C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplication\Week3_Task5\
 C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplication\Week3_Task5\obj\Debug\netcoreapp3.1\Week3_Task5.dll
 C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplication\Week3_Task5\obj\Debug\netcoreapp3.1\Week3_Task5.pdb
 C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplication\Week3_Task5\obj\Debug\netcoreapp3.1\Week3_Task5.genruntimeconfig.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplication\Week3_Task5\obj\Debug\netcoreapp3.1\Week3_Task5.csprojAssemblyReference.cache
