@@ -42,7 +42,7 @@ namespace Week2_Task6
 
                 else
                 {
-                    Console.WriteLine("Your cann't see this content.");
+                    Console.WriteLine("Your cann't see this content, because age-restricted contents are not viewable to users who are under 18 years of age ");
                 }
             
             }
