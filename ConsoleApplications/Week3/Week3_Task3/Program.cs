@@ -9,7 +9,7 @@ namespace Week3_Task3
             int number, numberOfAttempts = 0;
             Random randomNumber = new Random();
             int random = randomNumber.Next(50);
-            Console.WriteLine(random);
+           
 
             do
             {
@@ -19,11 +19,13 @@ namespace Week3_Task3
                 if (number < random)
                 {
                     Console.WriteLine("Your guess is less than the actual number");
+                    Console.WriteLine($"Your remaining guessing change is {5-numberOfAttempts}.\n");
                 }
 
                 if (number > random)
                 {
                     Console.WriteLine("Your guess is more than the actual number");
+                    Console.WriteLine($"Your remaining guessing change is {5-numberOfAttempts}.\n");
                 }
 
 
