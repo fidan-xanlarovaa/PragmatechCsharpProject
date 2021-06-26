@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdditionalTask_1
+namespace AdditionalTask_1_Discord
 {
     /*Write a C# Sharp program which takes a positive number and return the nth odd number.Sample Output:
       1st odd number: 1

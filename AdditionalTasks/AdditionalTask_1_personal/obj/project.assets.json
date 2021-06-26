@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1\\AdditionalTask_1_Discord.csproj",
-      "projectName": "AdditionalTask_1_Discord",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1\\AdditionalTask_1_Discord.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1_personal\\AdditionalTask_Arrays.csproj",
+      "projectName": "AdditionalTask_Arrays",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1_personal\\AdditionalTask_Arrays.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\AdditionalTasks\\AdditionalTask_1_personal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
