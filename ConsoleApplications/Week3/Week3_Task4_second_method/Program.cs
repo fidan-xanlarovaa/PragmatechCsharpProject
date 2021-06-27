@@ -11,14 +11,13 @@ namespace Week3_Task4_second_method
             Console.WriteLine("Pls enter a number");
             number = Convert.ToInt32(Console.ReadLine());
 
-            if (number == 0)
-            {
+           
                 while (number == 0)
                 {
                     Console.WriteLine("Pls enter a number");
                     number = Convert.ToInt32(Console.ReadLine());
                 }
-            }
+           
 
             int factorial = number;
 

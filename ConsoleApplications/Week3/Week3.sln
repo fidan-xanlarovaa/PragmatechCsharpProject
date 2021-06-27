@@ -3,35 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task1", "Week3_Task1\Week3_Task1.csproj", "{CB7F5E0E-118D-4FEE-B567-745B257FEDFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task1", "Week3_Task1\Week3_Task1.csproj", "{CB7F5E0E-118D-4FEE-B567-745B257FEDFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task2", "Week3_Task2\Week3_Task2.csproj", "{009755A0-D208-4697-BCAC-76FEFEBD818A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task2", "Week3_Task2\Week3_Task2.csproj", "{009755A0-D208-4697-BCAC-76FEFEBD818A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task3", "Week3_Task3\Week3_Task3.csproj", "{5B968799-A4EF-4AA6-8D17-5F6E5E9E28D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task3", "Week3_Task3\Week3_Task3.csproj", "{5B968799-A4EF-4AA6-8D17-5F6E5E9E28D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task4", "Week3_Task4\Week3_Task4.csproj", "{7812FEF3-D762-4CDE-9E5A-C9BD5D8D9F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task4", "Week3_Task4\Week3_Task4.csproj", "{7812FEF3-D762-4CDE-9E5A-C9BD5D8D9F9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task5", "Week3_Task5\Week3_Task5.csproj", "{EDBF32C0-4453-4BB5-B2CC-EF69E3C84DB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task5", "Week3_Task5\Week3_Task5.csproj", "{EDBF32C0-4453-4BB5-B2CC-EF69E3C84DB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task6", "Week3_Task6\Week3_Task6.csproj", "{BC013D74-7F07-404C-83D4-4973F8CD6F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task6", "Week3_Task6\Week3_Task6.csproj", "{BC013D74-7F07-404C-83D4-4973F8CD6F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task7", "Week3_Task7\Week3_Task7.csproj", "{193CB5F4-89A1-4376-B3C7-C0EB74A30267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task7", "Week3_Task7\Week3_Task7.csproj", "{193CB5F4-89A1-4376-B3C7-C0EB74A30267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task8", "Week3_Task8\Week3_Task8.csproj", "{DABE0DF1-7C23-4ACD-9AE2-D90537918031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task8", "Week3_Task8\Week3_Task8.csproj", "{DABE0DF1-7C23-4ACD-9AE2-D90537918031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task9", "Week3_Task9\Week3_Task9.csproj", "{4BFCDBA6-33E9-444D-80C1-3930AFF560A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task9", "Week3_Task9\Week3_Task9.csproj", "{4BFCDBA6-33E9-444D-80C1-3930AFF560A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task10", "Week3_Task10\Week3_Task10.csproj", "{62CB282B-531F-409B-86CB-AFCB8191E1F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task10", "Week3_Task10\Week3_Task10.csproj", "{62CB282B-531F-409B-86CB-AFCB8191E1F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task11", "Week3_Task11\Week3_Task11.csproj", "{610CA672-CE75-4065-B0AD-B84E6FB3BF62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task11", "Week3_Task11\Week3_Task11.csproj", "{610CA672-CE75-4065-B0AD-B84E6FB3BF62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task12", "Week3_Task12\Week3_Task12.csproj", "{B0A1EFD7-909D-43F7-AA90-295A53326DE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task12", "Week3_Task12\Week3_Task12.csproj", "{B0A1EFD7-909D-43F7-AA90-295A53326DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task4_second_method", "Week3_Task4_second_method\Week3_Task4_second_method.csproj", "{D358BF1E-1FA1-4CC8-A3CF-FD388C2609D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task4_second_method", "Week3_Task4_second_method\Week3_Task4_second_method.csproj", "{D358BF1E-1FA1-4CC8-A3CF-FD388C2609D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task7_second_method", "Week3_Task7_second_method\Week3_Task7_second_method.csproj", "{76D20B42-29B6-4447-9F3F-FE6FBF75E92C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task7_second_method", "Week3_Task7_second_method\Week3_Task7_second_method.csproj", "{76D20B42-29B6-4447-9F3F-FE6FBF75E92C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week3_Task8_second_method", "Week3_Task8_second_method\Week3_Task8_second_method.csproj", "{20933FFE-139A-4ACE-B82B-68ECEA5FD615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week3_Task8_second_method", "Week3_Task8_second_method\Week3_Task8_second_method.csproj", "{20933FFE-139A-4ACE-B82B-68ECEA5FD615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{A308752B-153F-41E8-A4D4-FE8D924B05C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{20933FFE-139A-4ACE-B82B-68ECEA5FD615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20933FFE-139A-4ACE-B82B-68ECEA5FD615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20933FFE-139A-4ACE-B82B-68ECEA5FD615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A308752B-153F-41E8-A4D4-FE8D924B05C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A308752B-153F-41E8-A4D4-FE8D924B05C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A308752B-153F-41E8-A4D4-FE8D924B05C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A308752B-153F-41E8-A4D4-FE8D924B05C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

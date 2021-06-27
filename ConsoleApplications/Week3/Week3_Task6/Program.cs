@@ -83,12 +83,11 @@ namespace Week3_Task6
 
             }
 
-
+            
             for (int i = 0; i < number / 2; i++)
             {
                 firstCommand[i] = Names[RandomNumbers[i]];
                 secondCommand[i] = Names[RandomNumbers[number - i - 1]];
-
             }
 
             Console.WriteLine("\n\nThese are our first team members\tThese are our second team members");
