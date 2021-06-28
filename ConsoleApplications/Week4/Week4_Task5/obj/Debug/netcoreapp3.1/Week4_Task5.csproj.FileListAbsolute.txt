@@ -1,0 +1,13 @@
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.deps.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.runtimeconfig.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.runtimeconfig.dev.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.dll
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\bin\Debug\netcoreapp3.1\Week4_Task5.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.AssemblyInfo.cs
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.dll
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task5\obj\Debug\netcoreapp3.1\Week4_Task5.genruntimeconfig.cache

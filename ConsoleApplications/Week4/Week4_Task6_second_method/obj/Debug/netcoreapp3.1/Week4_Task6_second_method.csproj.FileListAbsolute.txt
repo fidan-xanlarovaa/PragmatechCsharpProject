@@ -1,0 +1,12 @@
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.deps.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.runtimeconfig.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.runtimeconfig.dev.json
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.dll
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\bin\Debug\netcoreapp3.1\Week4_Task6_second_method.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.AssemblyInfo.cs
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.dll
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\Week4_Task6_second_method\obj\Debug\netcoreapp3.1\Week4_Task6_second_method.genruntimeconfig.cache
