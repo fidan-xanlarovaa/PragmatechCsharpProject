@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Week4_Task2
 {
@@ -19,12 +20,12 @@ namespace Week4_Task2
             Console.WriteLine("Actual array is:\n");
             Console.WriteLine(str1);
 
-            Array.Reverse(array);
+           int sum=array.Sum();
 
-            string str = String.Join(",", array);
+            
 
-            Console.WriteLine("\nReversed array is:\n");
-            Console.WriteLine(str);
+            Console.WriteLine("\nThe sum of the array elements is:\n");
+            Console.WriteLine(sum);
 
 
 
