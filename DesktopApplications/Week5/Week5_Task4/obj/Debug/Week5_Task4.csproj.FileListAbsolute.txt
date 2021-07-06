@@ -1,0 +1,10 @@
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\bin\Debug\Week5_Task4.exe.config
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\bin\Debug\Week5_Task4.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\bin\Debug\Week5_Task4.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.Form1.resources
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.Properties.Resources.resources
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task4\obj\Debug\Week5_Task4.pdb

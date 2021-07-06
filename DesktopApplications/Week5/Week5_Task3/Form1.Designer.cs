@@ -114,6 +114,7 @@ namespace Week5_Task3
             this.label1.Size = new System.Drawing.Size(334, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Write a word which you want to add to list box";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -125,6 +126,7 @@ namespace Week5_Task3
             this.label2.Size = new System.Drawing.Size(351, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Write a word which you want to search in list box";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
