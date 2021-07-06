@@ -16,5 +16,15 @@ namespace Week5_Task2
         {
             InitializeComponent();
         }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            string str = textBox1.Text.Trim().ToLower();
+            listBox1.Items.Add(str);
+            MessageBox.Show("Element succesfully Added");
+            textBox1.Clear();
+            textBox1.Focus();
+
+        }
     }
 }
