@@ -17,66 +17,78 @@ namespace Week5_Task3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            string strr = textBox2.Text.Trim().ToLower();
-            if (listBox1.Items.Contains(strr))
-            {
-                MessageBox.Show($"The ListBox contains the element {textBox2.Text}");
-            }
-
-            else
-            {
-                MessageBox.Show($"The ListBox doesn't contains the element {textBox2.Text}");
-            }
-
-        }
-
         private void Add_Click(object sender, EventArgs e)
         {
-            string str=textBox1.Text.Trim().ToLower();
-            listBox1.Items.Add(str);
-            MessageBox.Show("Element succesfully Added");
+            string str = textBox1.Text;
+            listBox1.Items.Add(str.Trim().ToLower());
             textBox1.Clear();
             textBox1.Focus();
-            
 
         }
 
-        private void Count_Click(object sender, EventArgs e)
+        private void Remove_Click(object sender, EventArgs e)
         {
-           MessageBox.Show("Number of elemnts in listBox is " + listBox1.Items.Count.ToString());
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
+            for (int i = listBox1.SelectedItems.Count-1; i >=0; i--)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItems[i]);
+            }
             
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Mix_Click(object sender, EventArgs e)
         {
+            
+            int count = listBox1.Items.Count;
+            int numArrayElement1;
+            if (count % 2 == 0)
+            {
+                numArrayElement1 = count/2;
+            }
+            else
+            {
+                numArrayElement1 = count / 2+1;
+            }
+            object[] evenIndexArray = new object[numArrayElement1];
+            object[] oddIndexArray = new object[count/2];
+            int k = 0;
+            int z = 0;
+            
 
-        }
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    evenIndexArray[k] = listBox1.Items[i];
+                    k++;
+                }
 
+                else
+                {
+                    oddIndexArray[z] = listBox1.Items[i];
+                    z++;
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+                }
+            }
 
-        }
+            k = numArrayElement1 - 1;
+            z = 0;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    listBox1.Items[i] = oddIndexArray[z];
+                    z++;
+                }
 
-        }
+                else
+                {
+                    listBox1.Items[i] = evenIndexArray[k];
+                    k--;
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+                }
+
+            }
 
         }
     }
