@@ -19,7 +19,7 @@ namespace Week5_Task4
 
         private void Add_Click(object sender, EventArgs e)
         {
-            string str = textBox1.Text.Trim().ToLower();
+            string str = textBox1.Text.Trim().ToUpper();
             listBox1.Items.Add(str);
             MessageBox.Show("Element succesfully Added");
             textBox1.Clear();
@@ -46,7 +46,7 @@ namespace Week5_Task4
 
         private void Search_Click(object sender, EventArgs e)
         {
-            string strr = textBox2.Text.Trim().ToLower();
+            string strr = textBox2.Text.Trim().ToUpper();
             if (listBox1.Items.Contains(strr))
             {
                 MessageBox.Show($"The ListBox contains the element {textBox2.Text}");

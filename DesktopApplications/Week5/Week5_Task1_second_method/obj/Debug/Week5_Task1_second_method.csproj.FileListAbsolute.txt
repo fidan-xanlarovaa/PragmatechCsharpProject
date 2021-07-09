@@ -7,3 +7,4 @@ C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1_second_method\bin\Debug\Week5_Task1_second_method.pdb
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1_second_method\obj\Debug\Week5_Task1_second_method.exe
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1_second_method\obj\Debug\Week5_Task1_second_method.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1_second_method\obj\Debug\Week5_Task1_second_method.csprojAssemblyReference.cache
