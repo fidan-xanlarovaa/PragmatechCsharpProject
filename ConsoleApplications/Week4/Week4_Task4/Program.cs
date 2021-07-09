@@ -19,7 +19,8 @@ namespace Week4_Task4
             Console.WriteLine("\n\nEdeceyiniz emeliyyati secin\n");
             Console.WriteLine("1-Uzv daxil edin");
             Console.WriteLine("2-Uzvu qeydiyyatdan silin");
-            Console.WriteLine("3 - Uzvlerin shisini gorun");
+            Console.WriteLine("3-Uzvlerin siyahisini gorun");
+            Console.WriteLine("4-Uzvlerin siyahisini tersine gorun");
             Console.WriteLine("5-Uzvlerin qeydiyyatda olub olmamasini yoxlayin");
             Console.WriteLine("6-Uzvlerin siyahisini bashdan sona siralayin");
             Console.WriteLine("7-Butun uzvlerin qeydiyyatini silin");
@@ -43,7 +44,8 @@ namespace Week4_Task4
                         user.Add(user1);
                         i++;
                     } while (i != number);
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -74,7 +76,9 @@ namespace Week4_Task4
                             Console.WriteLine(item);
                         }
                     }
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -96,7 +100,9 @@ namespace Week4_Task4
                             Console.WriteLine(item);
                         }
                     }
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -113,17 +119,24 @@ namespace Week4_Task4
 
                     else
                     {
+                        Console.WriteLine("Hazırki istifadecilerin siyahisi:\n");
+                        foreach (var item in user)
+                        {
+                            Console.WriteLine(item);
+                        }
 
                         user2 = (ArrayList)user.Clone();
                         user2.Reverse();
-
+                        Console.WriteLine("Tərsinə çevrilmiş istifadecilerin siyahisi:\n");
                         foreach (var item in user2)
                         {
                             Console.WriteLine(item);
                         }
 
                     }
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -154,7 +167,9 @@ namespace Week4_Task4
                             Console.WriteLine($"{user3} adda istifadeci movcud deyil");
                         }
                     }
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -179,7 +194,9 @@ namespace Week4_Task4
                             Console.WriteLine(item);
                         }
                     }
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -189,7 +206,9 @@ namespace Week4_Task4
                 case 7:
 
                     user.RemoveRange(0, user.Count);
-                    Console.WriteLine("Emeliyyat ugurla basha catdi.");
+
+                    Console.WriteLine("Emeliyyat ugurla basha catdi.Davam etmək üçün enteri basın");
+                    Console.ReadLine();
                     goto x;
                     break;
 
@@ -198,7 +217,7 @@ namespace Week4_Task4
 
                 case 8:
 
-                    Console.WriteLine("Sport komlekse qeydiyyat sisteminden cixisiniz ugurla heyate kecirildi.\nSistemden yaralandiqiniz ucun tesekkur edirik!");
+                    Console.WriteLine("\n\nSport komlekse qeydiyyat sisteminden cixisiniz ugurla heyate kecirildi.\nSistemden yaralandiqiniz ucun tesekkur edirik!");
                     break;
 
 

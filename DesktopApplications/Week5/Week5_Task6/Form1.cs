@@ -22,6 +22,7 @@ namespace Week5_Task6
             switch (carBrand)
             {
                 case "bmw":
+                    modell.Items.Clear();
                     modell.Items.Add("303");
                     modell.Items.Add("326");
                     modell.Items.Add("321");
@@ -29,6 +30,7 @@ namespace Week5_Task6
                     modell.Items.Add("320");
                     break;
                 case "hyundai":
+                    modell.Items.Clear();
                     modell.Items.Add("accent");
                     modell.Items.Add("i20");
                     modell.Items.Add("i30");
@@ -36,12 +38,14 @@ namespace Week5_Task6
                     modell.Items.Add("santro");
                     break;
                 case "ford":
+                    modell.Items.Clear();
                     modell.Items.Add("fiesta");
                     modell.Items.Add("ka");
                     modell.Items.Add("focus");
                     modell.Items.Add("figo");
                     break;
                 case "bugatti":
+                    modell.Items.Clear();
                     modell.Items.Add("veyron");
                     modell.Items.Add("chiron");
                     modell.Items.Add("divo");
