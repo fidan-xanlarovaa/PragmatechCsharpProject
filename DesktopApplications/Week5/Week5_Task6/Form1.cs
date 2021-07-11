@@ -71,9 +71,9 @@ namespace Week5_Task6
             car.Text = carBrand;
             car.SubItems.Add(carModell);
             car.SubItems.Add(carMotor);
-            car.SubItems.Add(carFuel);
-            car.SubItems.Add(carBody);
+            car.SubItems.Add(carFuel);           
             car.SubItems.Add(carSpeed);
+            car.SubItems.Add(carBody);
             car.SubItems.Add(year);
             car.UseItemStyleForSubItems = false; 
             car.SubItems.Add(string.Empty).BackColor = button2.BackColor;

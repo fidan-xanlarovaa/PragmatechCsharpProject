@@ -49,7 +49,7 @@ namespace Week5_Task4
             this.label2.Size = new System.Drawing.Size(351, 26);
             this.label2.TabIndex = 15;
             this.label2.Text = "Write a word which you want to search in list box";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label1
             // 
@@ -61,7 +61,7 @@ namespace Week5_Task4
             this.label1.Size = new System.Drawing.Size(334, 26);
             this.label1.TabIndex = 14;
             this.label1.Text = "Write a word which you want to add to list box";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // textBox2
             // 
@@ -69,7 +69,6 @@ namespace Week5_Task4
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(353, 20);
             this.textBox2.TabIndex = 13;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Search
             // 
@@ -116,8 +115,6 @@ namespace Week5_Task4
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(353, 20);
             this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -126,7 +123,6 @@ namespace Week5_Task4
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(353, 264);
             this.listBox1.TabIndex = 8;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 

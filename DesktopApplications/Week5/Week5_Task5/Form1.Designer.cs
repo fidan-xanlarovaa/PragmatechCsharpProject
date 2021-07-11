@@ -60,7 +60,6 @@ namespace Week5_Task5
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Name
             // 
@@ -103,7 +102,6 @@ namespace Week5_Task5
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(200, 20);
             this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // dateTimePicker1
             // 
@@ -122,7 +120,6 @@ namespace Week5_Task5
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

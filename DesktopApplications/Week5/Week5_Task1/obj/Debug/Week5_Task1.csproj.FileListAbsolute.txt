@@ -7,3 +7,4 @@ C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1\obj\Debug\Week5_Task1.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1\obj\Debug\Week5_Task1.exe
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1\obj\Debug\Week5_Task1.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week5\Week5_Task1\obj\Debug\Week5_Task1.csprojAssemblyReference.cache

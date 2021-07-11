@@ -37,12 +37,27 @@ namespace Week5_Task1_second_method
                     c = a * b;
                     break;
                 case "/":
-                    c = a / b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }
+                    else
+                    {
+                        c = a / b;
+                    }
                     break;
                 case "%":
-                    c = a % b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }
+                    else
+                    {
+                        c = a % b;
+                    }
                     break;
-
                 default:
                     break;
             }

@@ -36,10 +36,28 @@ namespace Week5_Task1
                     c = a * b;
                     break;
                 case "/":
-                    c = a / b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+
+                    }
+                    else
+                    {
+                        c = a / b;
+                    }
                     break;
                 case "%":
-                    c = a % b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+
+                    }
+                    else
+                    {
+                        c = a % b;
+                    }
                     break;
 
                 default:
@@ -70,18 +88,30 @@ namespace Week5_Task1
                     c = a * b;
                     break;
                 case "/":
-                    c = a / b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }
+                    else
+                    {
+                        c = a / b;
+                    }
                     break;
                 case "%":
-                    c = a % b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }                 
+                    else
+                    {
+                        c = a % b;
+                    }
                     break;
-
                 default:
                     break;
             }
-
-
-
             result1.Text = c.ToString();
         }
 
@@ -104,18 +134,30 @@ namespace Week5_Task1
                     c = a * b;
                     break;
                 case "/":
-                    c = a / b;
+                    if (b == 0)
+                    {
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }
+                    else
+                    {
+                        c = a / b;
+                    }
                     break;
                 case "%":
-                    c = a % b;
-                    break;
 
+                    if (b == 0) { 
+                        result1.Text = "--";
+                        MessageBox.Show("The element can not be divided by zero. Pls change the operation or the second integer.");
+                    }
+                    else
+                    {
+                        c = a % b;
+                    }                  
+                    break;
                 default:
                     break;
             }
-
-
-
             result1.Text = c.ToString();
         }
     }
