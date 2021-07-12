@@ -47,6 +47,10 @@ namespace Week6_Task1
 
         private void remove_Click(object sender, EventArgs e)
         {
+            for (int i = listView1.SelectedItems.Count-1; i >=0; i--)
+            {
+                listView1.SelectedItems[i].Remove();
+            }
         }
 
         private void search_Click(object sender, EventArgs e)
