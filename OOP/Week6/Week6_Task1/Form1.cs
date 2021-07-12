@@ -22,15 +22,15 @@ namespace Week6_Task1
 
         }
         
-        private void order_Click(object sender, EventArgs e)
+        public void order_Click(object sender, EventArgs e)
         {
 
-            //  ArrayList AllorderedProducts;
+            ArrayList AllorderedProducts=new ArrayList();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
 
             Product product = new Product(category.Text.Trim().ToLower(), prList.Text.Trim().ToLower(), kilo.Text.Trim().ToLower(), price.Text.Trim().ToLower(), shipping.Text.Trim().ToLower(), dateTimePicker1.Text, string.Empty);
-            
+            AllorderedProducts.Add(product);
             ListViewItem product1 = new ListViewItem();
 
             product1.Text = product.categoryy;
@@ -55,6 +55,27 @@ namespace Week6_Task1
 
         private void search_Click(object sender, EventArgs e)
         {
+            string str = textBox1.Text.Trim().ToLower();
+            bool k = false;
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+            if (listView1.Items[i].Text==str)
+                {
+                    MessageBox.Show("var");
+
+                    k = true;
+                    break;
+                }
+            else if(k==false)
+                {
+                    MessageBox.Show("yoxdu");
+                    break;
+                }
+                    
+                
+           }
+            
+            
 
         }
 
