@@ -50,6 +50,7 @@ namespace Week6_Task1
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.remove = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
             this.search_for = new System.Windows.Forms.ComboBox();
@@ -59,8 +60,9 @@ namespace Week6_Task1
             this.label10 = new System.Windows.Forms.Label();
             this.colour = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kilo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.price)).BeginInit();
             this.SuspendLayout();
@@ -218,7 +220,7 @@ namespace Week6_Task1
             this.order.BackColor = System.Drawing.Color.White;
             this.order.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(143)))), ((int)(((byte)(124)))));
-            this.order.Location = new System.Drawing.Point(1134, 448);
+            this.order.Location = new System.Drawing.Point(146, 446);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(121, 36);
             this.order.TabIndex = 13;
@@ -278,12 +280,17 @@ namespace Week6_Task1
             this.columnHeader6.Text = "Chatdirilma Tarixi";
             this.columnHeader6.Width = 121;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Reng";
+            this.columnHeader7.Width = 100;
+            // 
             // remove
             // 
             this.remove.BackColor = System.Drawing.Color.White;
             this.remove.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(143)))), ((int)(((byte)(124)))));
-            this.remove.Location = new System.Drawing.Point(1134, 578);
+            this.remove.Location = new System.Drawing.Point(1134, 618);
             this.remove.Name = "remove";
             this.remove.Size = new System.Drawing.Size(121, 36);
             this.remove.TabIndex = 15;
@@ -296,7 +303,7 @@ namespace Week6_Task1
             this.search.BackColor = System.Drawing.Color.White;
             this.search.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(143)))), ((int)(((byte)(124)))));
-            this.search.Location = new System.Drawing.Point(1134, 500);
+            this.search.Location = new System.Drawing.Point(1134, 540);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(121, 36);
             this.search.TabIndex = 16;
@@ -310,7 +317,14 @@ namespace Week6_Task1
             this.search_for.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.search_for.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.search_for.FormattingEnabled = true;
-            this.search_for.Location = new System.Drawing.Point(809, 530);
+            this.search_for.Items.AddRange(new object[] {
+            "Kategoriya",
+            "Siyahi",
+            "Cheki",
+            "Qiymet",
+            "Chatdirilma Formasi",
+            "Chatdirilma Tarixi"});
+            this.search_for.Location = new System.Drawing.Point(809, 570);
             this.search_for.Name = "search_for";
             this.search_for.Size = new System.Drawing.Size(121, 21);
             this.search_for.TabIndex = 17;
@@ -320,7 +334,7 @@ namespace Week6_Task1
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label8.Location = new System.Drawing.Point(604, 494);
+            this.label8.Location = new System.Drawing.Point(604, 534);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(199, 26);
             this.label8.TabIndex = 18;
@@ -331,7 +345,7 @@ namespace Week6_Task1
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label9.Location = new System.Drawing.Point(508, 530);
+            this.label9.Location = new System.Drawing.Point(508, 570);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(295, 26);
             this.label9.TabIndex = 19;
@@ -340,7 +354,7 @@ namespace Week6_Task1
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(79)))), ((int)(((byte)(81)))));
-            this.textBox1.Location = new System.Drawing.Point(809, 500);
+            this.textBox1.Location = new System.Drawing.Point(809, 540);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 20;
@@ -368,29 +382,44 @@ namespace Week6_Task1
             this.colour.UseVisualStyleBackColor = false;
             this.colour.Click += new System.EventHandler(this.colour_Click);
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.DisplayIndex = 6;
-            this.columnHeader7.Text = "Reng";
-            this.columnHeader7.Width = 100;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label11.Location = new System.Drawing.Point(530, 588);
+            this.label11.Location = new System.Drawing.Point(530, 628);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(570, 26);
             this.label11.TabIndex = 23;
             this.label11.Text = "Silmek istedyiniz sozlu sehchin,bir nece mehsul sechmek ucun Ctrl duymesini basar" +
     "aq sechin";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Niagara Solid", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label12.Location = new System.Drawing.Point(987, 446);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(216, 26);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Umumi sifarish edilen mehsul sayi";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1209, 452);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(29, 20);
+            this.textBox2.TabIndex = 25;
+            this.textBox2.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 723);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.colour);
             this.Controls.Add(this.label10);
@@ -427,38 +456,44 @@ namespace Week6_Task1
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox category;
-        private System.Windows.Forms.ComboBox prList;
-        private System.Windows.Forms.NumericUpDown kilo;
-        private System.Windows.Forms.ComboBox shipping;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown price;
-        private System.Windows.Forms.Button order;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button remove;
-        private System.Windows.Forms.Button search;
-        private System.Windows.Forms.ComboBox search_for;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button colour;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.ComboBox category;
+        public System.Windows.Forms.ComboBox prList;
+        public System.Windows.Forms.NumericUpDown kilo;
+        public System.Windows.Forms.ComboBox shipping;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.NumericUpDown price;
+        public System.Windows.Forms.Button order;
+        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.ColumnHeader columnHeader1;
+        public System.Windows.Forms.ColumnHeader columnHeader2;
+        public System.Windows.Forms.ColumnHeader columnHeader3;
+        public System.Windows.Forms.ColumnHeader columnHeader4;
+        public System.Windows.Forms.ColumnHeader columnHeader5;
+        public System.Windows.Forms.ColumnHeader columnHeader6;
+        public System.Windows.Forms.Button remove;
+        public System.Windows.Forms.Button search;
+        public System.Windows.Forms.ComboBox search_for;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Button colour;
+        public System.Windows.Forms.ColorDialog colorDialog1;
+        public System.Windows.Forms.ColumnHeader columnHeader7;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+    }
+
+    internal class ListViewColumnSorter
+    {
     }
 }
 
