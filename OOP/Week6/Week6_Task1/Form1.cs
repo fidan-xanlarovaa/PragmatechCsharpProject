@@ -13,17 +13,15 @@ namespace Week6_Task1
 {
     public partial class Form1 : Form
     {
+        
         List<Product> AllorderedProducts = new List<Product>();
         
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
         
         public void order_Click(object sender, EventArgs e)
         {
@@ -74,14 +72,16 @@ namespace Week6_Task1
 
 
         }
+        bool k = false;
+        int count = 0;
+        string str = "";
+        int index = 0;
 
         private void search_Click(object sender, EventArgs e)
         {
 
-            int index=0;
-            string str = textBox1.Text.Trim().ToLower();
             string str1= search_for.Text.Trim().ToLower();
-           
+            str = textBox1.Text.Trim().ToLower();
             foreach (ColumnHeader header in listView1.Columns)
             {
                 if (header.Text.Trim().ToLower() == str1)
@@ -90,8 +90,21 @@ namespace Week6_Task1
                 }
             }
 
-            bool k = false;
-            int count = 0;
+            k=Searching();
+
+            if (k == false)
+            {
+                MessageBox.Show("Axtarishiniza uyun netice yoxdur");                
+            }
+            else
+            {
+                MessageBox.Show("Axtarishiniza uyun "+count+" netice tapildi");
+            }
+        }
+
+        public bool Searching()
+        {
+            
             for (int i = 0; i < AllorderedProducts.Count; i++)
             {
                 switch (index)
@@ -141,20 +154,9 @@ namespace Week6_Task1
                     default:
                         break;
                 }
-
-                
             }
-            
-            if (k == false)
-            {
-                MessageBox.Show("Axtarishiniza uyun netice yoxdur");                
-            }
-            else
-            {
-                MessageBox.Show("Axtarishiniza uyun "+count+" netice tapildi");
-            }
+            return k;
         }
-
         private void colour_Click(object sender, EventArgs e)
         {
             using (colorDialog1=new ColorDialog())
@@ -200,9 +202,5 @@ namespace Week6_Task1
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

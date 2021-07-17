@@ -248,7 +248,6 @@ namespace Week6_Task1
             this.listView1.TabIndex = 14;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -446,7 +445,6 @@ namespace Week6_Task1
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kilo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.price)).EndInit();
             this.ResumeLayout(false);
