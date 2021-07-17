@@ -30,7 +30,9 @@ namespace Week6_Task1
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
 
-            Product product = new Product
+            if (category.Text.Trim().ToLower() != null && prList.Text.Trim().ToLower() != null && kilo.Text.Trim().ToLower() != "0" && price.Text.Trim().ToLower() != "0" && shipping.Text.Trim().ToLower() != null)
+            {
+                Product product = new Product
             {
                 categoryy = category.Text.Trim().ToLower(),
                 list=prList.Text.Trim().ToLower(),
@@ -40,9 +42,9 @@ namespace Week6_Task1
                 date=dateTimePicker1.Text,
                 colourr=string.Empty
             };
-           
-            AllorderedProducts.Add(product);
-            
+                
+            AllorderedProducts.Add(product);         
+
             ListViewItem product1 = new ListViewItem();
             product1.Text = product.categoryy;
             product1.SubItems.Add(product.list);
@@ -52,7 +54,14 @@ namespace Week6_Task1
             product1.SubItems.Add(product.date);
             product1.UseItemStyleForSubItems = false;
             product1.SubItems.Add(product.colourr).BackColor = colour.BackColor;
+
             listView1.Items.Add(product1);
+            }
+            else
+            {
+                MessageBox.Show("Zehmet olmasa butun deyerleri dogru daxil edin");
+            }
+            
             textBox2.Text = AllorderedProducts.Count.ToString();
 
         }
