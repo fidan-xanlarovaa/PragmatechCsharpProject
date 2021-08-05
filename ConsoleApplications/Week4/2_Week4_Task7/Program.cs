@@ -6,22 +6,15 @@ namespace _2_Week4_Task7
     {
         static void Main(string[] args)
         {
-            int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
-            int x = intArray[0];
-            y:
-            for (int i = 0; i < intArray.Length; i++)
+            int total = 0;
+            Console.WriteLine("Iki musbet eded daxil edin");
+            int num1=Convert.ToInt32(Console.ReadLine());
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < num2; i++)
             {
-                
-                    if(intArray[i]< intArray[0])
-                {
-                    x = intArray[i];
-                    Console.WriteLine(x);
-                    goto y;
-                }
-                
+                total = total + num1;
             }
-            Console.ReadLine();
-            Console.ReadLine();
+            Console.WriteLine(total);
         }
     }
 }
