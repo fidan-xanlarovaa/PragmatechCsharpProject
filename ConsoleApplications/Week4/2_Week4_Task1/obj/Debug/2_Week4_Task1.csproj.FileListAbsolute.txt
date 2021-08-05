@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\bin\Debug\2_Week4_Task1.exe.config
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\bin\Debug\2_Week4_Task1.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\bin\Debug\2_Week4_Task1.pdb
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\obj\Debug\2_Week4_Task1.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\obj\Debug\2_Week4_Task1.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\obj\Debug\2_Week4_Task1.exe
+C:\Users\HP\source\repos\PragmatechCsharpProject\ConsoleApplications\Week4\2_Week4_Task1\obj\Debug\2_Week4_Task1.pdb
