@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ipZXjTD4brJXgmmwxUxXWwztOppXu4qn5RKQxwTRuoaZJ3gJEK4hZ5VrkvUm5X2kl0/G3jPK0GuKYL9o+FOV/w==",
+  "dgSpecHash": "uSOFRa3Rz1b++gaNP/k0HsEeJm6ZfYV7jmJkdYYaxJ5MWTEo8bBircF0ffds7wHjvE572xezFtMPj9nGhJYpcQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\ConsoleApplications\\Week4\\Week4_Task2_second_method\\Week4_Task2_second_method.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512"
+  ],
   "logs": []
 }
