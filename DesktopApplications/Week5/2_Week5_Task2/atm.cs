@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2_Week5_Task2
 {
@@ -13,11 +10,9 @@ namespace _2_Week5_Task2
         public static int Menyu()
         {
             Console.WriteLine("\n\n\nZehmet olmasa sechmek istediyiniz emeliyyatin nomresini daxil edin:\n1.Balans\n2.Negd pulun verilmesi\n3.Balansdan cixaris");
-
             int number = ValidateMenyu();
             return number;
         }
-
         public static int ValidateMenyu()
         {
             int number;
@@ -25,37 +20,26 @@ namespace _2_Week5_Task2
         checkAgain:
             try
             {
-
                 number = Convert.ToInt32(Console.ReadLine());
                 while (number < 0 || number > 3)
                 {
                     Console.WriteLine("Daxil etdiyiniz reqem dogru deyil.Eded 1 ve 3 araliqinda olmalidir.");
                     number = Convert.ToInt32(Console.ReadLine());
-
                 }
             }
 
             catch (Exception)
             {
-
                 Console.WriteLine("Zehmet olmasa eded daxil edin");
                 goto checkAgain;
-
             }
             return number;
         }
-
-          
-        
-
         public  void Cash()
         {
-           
-            
             int[] money = { 1, 5, 10, 20, 50, 100, 200 };
             Console.WriteLine("\nElde etmek istediyiniz mebleqi daxil edin");
-            int cash = Convert.ToInt32(Console.ReadLine());
-            
+            int cash = Convert.ToInt32(Console.ReadLine());            
 
             if (balance-cash >0)
             {
@@ -71,27 +55,19 @@ namespace _2_Week5_Task2
                         Console.WriteLine($"{count} eded {money[i]}");
                     }
                     cash = cash - count * money[i];
-
                 }
             }
 
             else
             {
                 Console.WriteLine("\nTeessufki kartinizda yeterli mebleq yoxdur.");
-            }
-            
-                     
-
+            }          
         }  
-
-
-
         public  void Receipt()
         {
             if (h1.Count==0)
             {
-                Console.WriteLine("\nKartdan mexaric olunmayib");
-                
+                Console.WriteLine("\nKartdan mexaric olunmayib");                
             }
 
             else
