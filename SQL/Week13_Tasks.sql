@@ -17,10 +17,16 @@ PamelaAnsman-Wolfe	    24432.608800
 ShuIto	                59708.320800
 TsviReiter	            104419.329100*/
 
-select p.BusinessEntityID,p.FirstName,p.LastName,e.Gender,e.JobTitle,p.FirstName+'.'+p.LastName+'@gmail.com'
- from AdventureWorks2016.Person.Person p
- inner join AdventureWorks2016.HumanResources.Employee e 
- on p.BusinessEntityID=e.BusinessEntityID
+/*select * from Sales.SalesOrderHeader -- order data
+select * from  Sales.SalesOrderDetail --line total
+select * from Person.Person -- ad soyad*/
+
+select p.FirstName,p.LastName,h.OrderDate,Sum(o.LineTotal) SumOfLineTotal from Sales.SalesOrderHeader as h
+inner join Person.Person p on p.BusinessEntityID=h.SalesPersonID
+inner join Sales.SalesOrderDetail o on o.SalesOrderID=h.SalesOrderID
+where h.OrderDate='2011-05-31 00:00:00.000'
+group by p.FirstName,p.LastName,h.OrderDate
+order by p.FirstName
 
  --Task 2
  /*
@@ -92,7 +98,9 @@ select p.BusinessEntityID,p.FirstName,p.LastName,e.Gender,e.JobTitle,p.FirstName
  exec [Add] @id=100000000,@name='Fidan',@surname='Xanlarova',@status='student',@gender='F' 
  exec [Add] @id=100000001,@name='Tahir',@surname='Eyvazov',@status='student'
 
+
  --Update
+
  create proc [Update](
  @id int,
  @name nvarchar(50),
