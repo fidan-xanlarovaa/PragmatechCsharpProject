@@ -21,6 +21,8 @@ TsviReiter	            104419.329100*/
 select * from  Sales.SalesOrderDetail --line total
 select * from Person.Person -- ad soyad*/
 
+use AdventureWorks2016
+
 select p.FirstName,p.LastName,h.OrderDate,Sum(o.LineTotal) SumOfLineTotal from Sales.SalesOrderHeader as h
 inner join Person.Person p on p.BusinessEntityID=h.SalesPersonID
 inner join Sales.SalesOrderDetail o on o.SalesOrderID=h.SalesOrderID
@@ -48,6 +50,8 @@ order by p.FirstName
  */
 
  create database MyDatabase
+
+ use MyDatabase
  
  --2.a
  create table Person(
@@ -193,26 +197,26 @@ exec GetByEmail @email='Roberto.Tamburello@gmail.com'
  GetAll
  */
 
- create proc DoProcedure(@procedureName nvarchar(20))
+ create proc DoProcedure(@procedureName nvarchar(20),@id int=null,@name nvarchar(20)='',@surname nvarchar(20)='',@status nvarchar(20)='',@gender char(1)='M')
  as
  begin
  
  if @procedureName='add'
- exec [Add] @id=100000001,@name='Tahir',@surname='Eyvazov',@status='student'
+ exec [Add] @id=@id,@name=@name,@surname=@surname,@status=@status 
  
  else if @procedureName='update' 
- exec [Update] @id=100000001,@name='Nezrin',@surname='Aliyeva',@status='teacher',@gender='F' 
+ exec [Update] @id=@id,@name=@name,@surname=@surname,@status=@status,@gender=@gender
 
  else if @procedureName='delete'
- exec [Delete]  @id=100000001
+ exec [Delete]  @id=@id
 
  else if @procedureName='getall'
  exec GetAll
  end
 
- exec DoProcedure @procedureName='add'
- exec DoProcedure @procedureName='update'
- exec DoProcedure @procedureName='delete'
+ exec DoProcedure @procedureName='add',@id=100000001,@name='Tahir',@surname='Eyvazov',@status='student'
+ exec DoProcedure @procedureName='update',@id=100000001,@name='Nezrin',@surname='Aliyeva',@status='teacher',@gender='F' 
+ exec DoProcedure @procedureName='delete',@id=100000001
  exec DoProcedure @procedureName='getall'
 
 
