@@ -147,8 +147,14 @@ exec GetById @id=6
 
 
 --GetAll (parametr almayacaq)
+create GetAll
+as
+begin 
+select * from Person
+end
 
-create proc GetAll
+alter proc GetAll
+with encryption
 as
 begin 
 select * from Person
@@ -200,7 +206,7 @@ exec GetByEmail @email='Roberto.Tamburello@gmail.com'
  create proc DoProcedure(@procedureName nvarchar(20),@id int=null,@name nvarchar(20)='',@surname nvarchar(20)='',@status nvarchar(20)='',@gender char(1)='M')
  as
  begin
- 
+
  if @procedureName='add'
  exec [Add] @id=@id,@name=@name,@surname=@surname,@status=@status 
  
@@ -218,6 +224,7 @@ exec GetByEmail @email='Roberto.Tamburello@gmail.com'
  exec DoProcedure @procedureName='update',@id=100000001,@name='Nezrin',@surname='Aliyeva',@status='teacher',@gender='F' 
  exec DoProcedure @procedureName='delete',@id=100000001
  exec DoProcedure @procedureName='getall'
+
 
 
  --Task 4
