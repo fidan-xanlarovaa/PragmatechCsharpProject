@@ -1,7 +1,0 @@
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\bin\Debug\2_Week6_Task3.exe.config
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\bin\Debug\2_Week6_Task3.exe
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\bin\Debug\2_Week6_Task3.pdb
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\obj\Debug\2_Week6_Task3.csprojAssemblyReference.cache
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\obj\Debug\2_Week6_Task3.csproj.CoreCompileInputs.cache
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\obj\Debug\2_Week6_Task3.exe
-C:\Users\HP\source\repos\PragmatechCsharpProject\OOP\Week6\2_Week6_Task3\obj\Debug\2_Week6_Task3.pdb
