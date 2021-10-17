@@ -9,3 +9,15 @@ C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\Phon
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.dll
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\ref\PhoneBook.Entities_.dll
 C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.pdb
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\bin\Debug\net5.0\PhoneBook.Entities_.deps.json
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\bin\Debug\net5.0\PhoneBook.Entities_.dll
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\bin\Debug\net5.0\ref\PhoneBook.Entities_.dll
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\bin\Debug\net5.0\PhoneBook.Entities_.pdb
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.AssemblyInfo.cs
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.dll
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\ref\PhoneBook.Entities_.dll
+C:\Users\Asus\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Entities_\obj\Debug\net5.0\PhoneBook.Entities_.pdb

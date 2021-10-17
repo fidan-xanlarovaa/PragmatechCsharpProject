@@ -1,20 +1,13 @@
-﻿using PhoneBook.Business.Constants;
-using PhoneBook.Business.Enums;
-using PhoneBook.Business.Services;
-using PhoneBook.Core.Repository;
-using PhoneBook.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PhoneBook.Business_.Constants;
+using PhoneBook.Business_.Enums;
+using PhoneBook.Business_.Services;
+using PhoneBook.Core_.Repository;
+using PhoneBook.Entities_;
 
-
-namespace PhoneBook.UI
+namespace PhoneBook.UI.CROSS
 {
     public partial class PhoneBookForm : Form
     {

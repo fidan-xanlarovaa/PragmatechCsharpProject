@@ -1,7 +1,12 @@
-﻿using System;
+﻿using PhoneBook.Entities_;
+using System;
 using System.Windows.Forms;
+using PhoneBook.Business_.Constants;
+using PhoneBook.Business_.Enums;
+using PhoneBook.Business_.Services;
+using PhoneBook.Core_.Repository;
 
-namespace PhoneBook.UI
+namespace PhoneBook.UI.CROSS
 {
     public partial class LoginForm : Form
     {
@@ -14,8 +19,7 @@ namespace PhoneBook.UI
         {
             if (!string.IsNullOrEmpty(txtBoxUsername.Text) && !string.IsNullOrEmpty(txtBoxPassword.Text))
             {
-
-                IUserService userService = new UserService(new UserRepository());
+                UserService userService = new UserService(new UserRepository());
 
                 var user = new User()
                 {
@@ -42,7 +46,6 @@ namespace PhoneBook.UI
                         MessageBox.Show(GlobalConstants.InvalidAttempt, GlobalConstants.CaptionInfo, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
-
             }
             else
             {
@@ -51,3 +54,5 @@ namespace PhoneBook.UI
         }
     }
 }
+
+

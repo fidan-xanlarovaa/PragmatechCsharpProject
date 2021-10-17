@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneBook.Business_\PhoneBook.Business_.csproj" />
+    <ProjectReference Include="..\PhoneBook.Core_\PhoneBook.Core_.csproj" />
+    <ProjectReference Include="..\PhoneBook.Entities_\PhoneBook.Entities_.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PhoneBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhoneBookForm.Designer.cs">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="PhoneBookForm.resx">
+      <DependentUpon>PhoneBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

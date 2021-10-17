@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.UI", "PhoneBook.UI\PhoneBook.UI.csproj", "{0CE2FBA6-50EE-4F8B-875D-32CF4677AA60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.Entities_", "PhoneBook.Entities_\PhoneBook.Entities_.csproj", "{7A891CBD-75EE-49DB-98C6-D419C6F3F720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.Entities_", "PhoneBook.Entities_\PhoneBook.Entities_.csproj", "{7A891CBD-75EE-49DB-98C6-D419C6F3F720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.Core_", "PhoneBook.Core_\PhoneBook.Core_.csproj", "{8A60F51E-9E74-45E3-AABD-212DB3C29F96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.Core_", "PhoneBook.Core_\PhoneBook.Core_.csproj", "{8A60F51E-9E74-45E3-AABD-212DB3C29F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.Business_", "PhoneBook.Business_\PhoneBook.Business_.csproj", "{BBC1BD56-0A8E-477B-95E8-3C5B06DFA229}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.Business_", "PhoneBook.Business_\PhoneBook.Business_.csproj", "{BBC1BD56-0A8E-477B-95E8-3C5B06DFA229}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.UI.CROSS", "PhoneBook.UI.CROSS\PhoneBook.UI.CROSS.csproj", "{B4F6D09C-D4C9-4FC0-9738-08D180ED4629}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0CE2FBA6-50EE-4F8B-875D-32CF4677AA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CE2FBA6-50EE-4F8B-875D-32CF4677AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CE2FBA6-50EE-4F8B-875D-32CF4677AA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CE2FBA6-50EE-4F8B-875D-32CF4677AA60}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A891CBD-75EE-49DB-98C6-D419C6F3F720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A891CBD-75EE-49DB-98C6-D419C6F3F720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A891CBD-75EE-49DB-98C6-D419C6F3F720}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{BBC1BD56-0A8E-477B-95E8-3C5B06DFA229}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBC1BD56-0A8E-477B-95E8-3C5B06DFA229}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC1BD56-0A8E-477B-95E8-3C5B06DFA229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F6D09C-D4C9-4FC0-9738-08D180ED4629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F6D09C-D4C9-4FC0-9738-08D180ED4629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F6D09C-D4C9-4FC0-9738-08D180ED4629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F6D09C-D4C9-4FC0-9738-08D180ED4629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

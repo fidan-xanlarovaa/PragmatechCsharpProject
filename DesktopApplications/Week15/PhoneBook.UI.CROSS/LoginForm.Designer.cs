@@ -1,5 +1,5 @@
 ﻿
-namespace PhoneBook.UI
+namespace PhoneBook.UI.CROSS
 {
     partial class LoginForm
     {
@@ -41,10 +41,11 @@ namespace PhoneBook.UI
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(446, 167);
+            this.btnLogin.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Location = new System.Drawing.Point(595, 257);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(231, 41);
+            this.btnLogin.Size = new System.Drawing.Size(308, 63);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -52,61 +53,67 @@ namespace PhoneBook.UI
             // 
             // txtBoxPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(446, 101);
+            this.txtBoxPassword.Location = new System.Drawing.Point(595, 155);
+            this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPassword.Multiline = true;
             this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.Size = new System.Drawing.Size(231, 30);
+            this.txtBoxPassword.Size = new System.Drawing.Size(307, 44);
             this.txtBoxPassword.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(339, 112);
+            this.label2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(452, 172);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 19);
+            this.label2.Size = new System.Drawing.Size(92, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 66);
+            this.label1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(447, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.Size = new System.Drawing.Size(97, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Username";
             // 
             // txtBoxUsername
             // 
-            this.txtBoxUsername.Location = new System.Drawing.Point(446, 55);
+            this.txtBoxUsername.Location = new System.Drawing.Point(595, 85);
+            this.txtBoxUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxUsername.Multiline = true;
             this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(231, 30);
+            this.txtBoxUsername.Size = new System.Drawing.Size(307, 44);
             this.txtBoxUsername.TabIndex = 7;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 231);
+            this.pictureBox1.Size = new System.Drawing.Size(336, 355);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 273);
+            this.ClientSize = new System.Drawing.Size(1067, 420);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxUsername);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -1,5 +1,5 @@
 ﻿
-namespace PhoneBook.UI
+namespace PhoneBook.UI.CROSS
 {
     partial class PhoneBookForm
     {
