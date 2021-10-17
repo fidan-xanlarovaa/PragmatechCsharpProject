@@ -99,7 +99,7 @@ namespace Week7_Task1
         {
             if (BaseEntity._database != null && BaseEntity._database.Count > 0 && id >= BaseEntity._database.Count)
             {
-                if (model != null && !string.IsNullOrEmpty(model.Barcode))
+                if (model != null && !string.IsNullOrEmpty(model.Barcode) && !CheckBarcode(model))
                 {
                     for (int i = 0; i < BaseEntity._database.Count; i++)
                     {
@@ -144,6 +144,10 @@ namespace Week7_Task1
 
 
                     }
+                }
+                else
+                {
+                    Console.WriteLine("Ugursuz'");
                 }
             }
 

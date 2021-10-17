@@ -1,0 +1,5 @@
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.UI\obj\Debug\PhoneBook.UI.LoginForm.resources
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.UI\obj\Debug\PhoneBook.UI.PhoneBookForm.resources
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.UI\obj\Debug\PhoneBook.UI.Properties.Resources.resources
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.UI\obj\Debug\PhoneBook.UI.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.UI\obj\Debug\PhoneBook.UI.csproj.CoreCompileInputs.cache
