@@ -89,17 +89,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhoneBook.Business\PhoneBook.Business.csproj">
-      <Project>{344dc85f-cd1e-46a6-a4eb-07f65264a698}</Project>
-      <Name>PhoneBook.Business</Name>
+    <ProjectReference Include="..\PhoneBook.Business_\PhoneBook.Business_.csproj">
+      <Project>{bbc1bd56-0a8e-477b-95e8-3c5b06dfa229}</Project>
+      <Name>PhoneBook.Business_</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhoneBook.Core\PhoneBook.Core.csproj">
-      <Project>{cba49b3b-62a2-4986-a26d-af6ba8a80d18}</Project>
-      <Name>PhoneBook.Core</Name>
+    <ProjectReference Include="..\PhoneBook.Core_\PhoneBook.Core_.csproj">
+      <Project>{8a60f51e-9e74-45e3-aabd-212db3c29f96}</Project>
+      <Name>PhoneBook.Core_</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhoneBook.Entities\PhoneBook.Entities.csproj">
-      <Project>{33e53e86-90dc-48ba-a024-c028efe33012}</Project>
-      <Name>PhoneBook.Entities</Name>
+    <ProjectReference Include="..\PhoneBook.Entities_\PhoneBook.Entities_.csproj">
+      <Project>{7a891cbd-75ee-49db-98c6-d419c6f3f720}</Project>
+      <Name>PhoneBook.Entities_</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

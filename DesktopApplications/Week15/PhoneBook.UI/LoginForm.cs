@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PhoneBook.Entities;
-using PhoneBook.Business.Services;
-using PhoneBook.Core.Repository;
-using PhoneBook.Business.Enums;
-using PhoneBook.Business.Constants;
 
 namespace PhoneBook.UI
 {

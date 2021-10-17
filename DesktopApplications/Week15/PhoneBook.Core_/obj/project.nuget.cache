@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zp3DxXGxVAKZMmR+5ErVyJeOI/T8XDjp0fSbWUm0iAFkDPwQVUtrwYFlOzcNyODIhIt8RfCoQUdOF735+8oR8A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\PragmatechCsharpProject\\DesktopApplications\\Week15\\PhoneBook.Core_\\PhoneBook.Core_.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,4 +1,0 @@
-C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Core\obj\Debug\PhoneBook.Core.csproj.AssemblyReference.cache
-C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Core\obj\Debug\PhoneBook.Core.Properties.Resources.resources
-C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Core\obj\Debug\PhoneBook.Core.csproj.GenerateResource.cache
-C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Core\obj\Debug\PhoneBook.Core.csproj.CoreCompileInputs.cache
