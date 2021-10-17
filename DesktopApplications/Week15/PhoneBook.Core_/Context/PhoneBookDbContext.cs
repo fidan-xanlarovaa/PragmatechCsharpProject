@@ -25,23 +25,13 @@ namespace PhoneBook.Core_.Context
         public PhoneBookDbContext()
         {
             _approot = AppRoot();
-            _path = Directory.GetParent(_approot)?.FullName + "/PhoneBook.Core/Context";
+            _path = Directory.GetParent(_approot)?.FullName + "/PhoneBook.Core_/Context";
             EnsureOrCreateDatabase();// eger Db bosdursa yeni instance yaradir
-            if (_contacts != null)
-            {
-                _contacts = new List<Contact>();
-
-            }
-
-            if (_users != null)
-            {
-                _users = new List<User>();
-
-            }
+            _contacts ??= new List<Contact>();
+            _users ??= new List<User>();
         }
         #endregion
-
-
+        
         #region fields 
 
         private readonly string _path;
@@ -77,10 +67,10 @@ namespace PhoneBook.Core_.Context
             //core.dll icerisinde yeni verdiyimiz pathde entitylerimize uyqun json file yardir.Bunu biz hal hazirda db kimi istifade edeceyik
 
             var path = Directory.GetParent(_approot)?.FullName;
-            var coreDLL = $@"{path}\PhoneBook.Core\bin\Debug\net5.0\PhoneBook.Core.dll";
+            var coreDLL = $@"{path}\PhoneBook.Core_\bin\Debug\net5.0\PhoneBook.Core_.dll";
 
             var assembly = Assembly.LoadFile(coreDLL);
-            var type = assembly.GetType("PhoneBook.Core.Context.PhoneBookDbContext");
+            var type = assembly.GetType("PhoneBook.Core_.Context.PhoneBookDbContext");
 
             if (type != null)
             {
