@@ -12,17 +12,4 @@
     <ProjectReference Include="..\PhoneBook.Entities_\PhoneBook.Entities_.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="PhoneBookForm.cs" />
-    <Compile Update="PhoneBookForm.Designer.cs">
-      <DependentUpon>PhoneBookForm.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="PhoneBookForm.resx">
-      <DependentUpon>PhoneBookForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>

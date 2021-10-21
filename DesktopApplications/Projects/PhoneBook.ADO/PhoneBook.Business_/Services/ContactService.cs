@@ -27,7 +27,7 @@ namespace PhoneBook.Business_.Services
         public ContactService(IContactRepository contactRepository)
         {
             _contactRepository = contactRepository;
-            _exportPath = @"C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Week15\PhoneBook.Core_\Context";
+            _exportPath = @"C:\Users\HP\source\repos\PragmatechCsharpProject\DesktopApplications\Projects\PhoneBook.ADO\PhoneBook.Core_\Context";
         }
         public int Add(Contact entity)
         {

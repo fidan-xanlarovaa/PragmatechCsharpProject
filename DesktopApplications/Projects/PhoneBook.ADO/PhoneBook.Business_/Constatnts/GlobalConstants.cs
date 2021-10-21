@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PhoneBook.Business_.Constants
+{
+    public static class GlobalConstants
+    {
+        public const string Required = "Username and password required!";
+        public const string ModelStateNotValid = "Model State Not Valid!";
+        public const string InvalidAttempt = "Invalid username or password!";
+        public const string CaptionInfo = "Information";
+        public const string CaptionQuestion = "Question";
+        public const string AddSuccess = "Add to success";
+        public const string Success = "The operation is successful";
+        public const string Fail = "The operation is failed";
+        public const string UpdateSuccess = "Update to success";
+        public const string DeleteSuccess = "Delete to success";
+        public const string AddOperationAgain = " add operation again ? ";
+        public const string AddError = "Excepction: add operation error!!";
+        public const string EmptyList = "Data does not exist";
+    }
+}
