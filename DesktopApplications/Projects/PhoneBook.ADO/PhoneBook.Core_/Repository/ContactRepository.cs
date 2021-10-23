@@ -2,6 +2,8 @@
 using PhoneBook.Entities_;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,121 +12,197 @@ namespace PhoneBook.Core_.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private readonly PhoneBookDbContext _context;
+        private readonly PhoneBookADODbContext _context;
         public ContactRepository()
         {
-            _context = new PhoneBookDbContext();
-        }
-        #region Implementation of IContactRepository
-
-        public int Add(Contact entity)
-        {
-            int result;
-            try
-            {
-                _context.Contacts.Add(entity);
-                _context.SaveChanges(_context.Contacts);
-                result = 1;
-            }
-            catch (Exception)
-            {
-                result = 0;
-                throw;
-            }
-
-
-            return result;
+            _context = new PhoneBookADODbContext();
         }
 
-        public int AddRange(List<Contact> entity)
+        private SqlDataReader GetAllDataReader()
         {
-            int result;
-            try
-            {
-                _context.Contacts.AddRange(entity);
-                _context.SaveChanges(_context.Contacts);
-                result = 1;
-            }
-            catch (Exception)
-            {
-                result = 0;
-                throw;
-            }
-
-
-            return result;
+            _context.Command = new SqlCommand("select * from Contact", _context.Connection);
+            _context.SetConnection();
+            return _context.Command.ExecuteReader();
         }
 
-        public int Delete(Guid id)
+        private SqlDataReader GetByIdDataReader(Guid id)
         {
-            int result;
+            _context.Command = new SqlCommand("select * from Contact where Id=@id", _context.Connection);
+            _context.Command.Parameters.Add("@id", System.Data.SqlDbType.UniqueIdentifier).Value = id;
+            _context.SetConnection();
+            return _context.Command.ExecuteReader();
+        }
+
+        public Contact  GetById(Guid id)
+        {
+            var entity = new Contact();
+
             try
             {
-                var entity = _context.Contacts.Find(i => i.Id == id);
+                SqlDataReader reader = GetByIdDataReader(id);
 
-                if (entity == null)
+                while (reader.Read())
                 {
-                    return result = 0;
+                    entity = new Contact
+                    {
+                        Id = reader.IsDBNull(0) ? Guid.Empty : reader.GetGuid(0),
+                        Name = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
+                        Surname = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
+                        Number1 = reader.IsDBNull(3) ? string.Empty : reader.GetString(3),
+                        Number2 = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
+                        Number3 = reader.IsDBNull(5) ? string.Empty : reader.GetString(5),
+                        Address = reader.IsDBNull(6) ? string.Empty : reader.GetString(6),
+                        Email = reader.IsDBNull(7) ? string.Empty : reader.GetString(7),
+                        Website = reader.IsDBNull(8) ? string.Empty : reader.GetString(8),
+                        Description = reader.IsDBNull(9) ? string.Empty : reader.GetString(9)
+                    };
                 }
 
-                _context.Contacts.Remove(entity);
-                _context.SaveChanges(_context.Contacts);
-
-                result = 1;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                result = 0;
+
                 throw;
             }
+            finally
+            {
+                _context.SetConnection();
+            }
 
-            return result;
+            return entity;
         }
 
         public List<Contact> GetAll()
         {
-            return _context.Contacts;
-        }
-
-        public int Update(Contact request)
-        {
-            int result;
+            List<Contact> entities = new List<Contact>();
 
             try
             {
-                var contact = _context.Contacts.Find(i => i.Id == request.Id);
+                SqlDataReader reader = GetAllDataReader();
 
-                if (contact == null)
+                while (reader.Read())
                 {
-                    return result = 0;
+                    entities.Add(new Contact
+                    {
+                        Id = reader.IsDBNull(0) ? Guid.Empty : reader.GetGuid(0),
+                        Name = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
+                        Surname = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
+                        Number1 = reader.IsDBNull(3) ? string.Empty : reader.GetString(3),
+                        Number2 = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
+                        Number3 = reader.IsDBNull(5) ? string.Empty : reader.GetString(5),
+                        Address = reader.IsDBNull(6) ? string.Empty : reader.GetString(6),
+                        Email = reader.IsDBNull(7) ? string.Empty : reader.GetString(7),
+                        Website = reader.IsDBNull(8) ? string.Empty : reader.GetString(8),
+                        Description = reader.IsDBNull(9) ? string.Empty : reader.GetString(9),
+
+                    });
                 }
-                contact.Name = request.Name;
-                contact.Surname = request.Surname;
-                contact.Email = request.Email;
-                contact.Website = request.Website;
-                contact.Address = request.Address;
-                contact.Description = request.Description;
-                contact.Number1 = request.Number1;
-                contact.Number2 = request.Number2;
-                contact.Number3 = request.Number3;
-
-                _context.SaveChanges(_context.Contacts);
-
-                result = 1;
-
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                result = 0;
-
+                Console.WriteLine(e);
                 throw;
             }
+            finally
+            {
+                _context.SetConnection();
+            }
 
-            return result;
+            return entities;
+        }
+        public int Add(Contact entity)
+        {
+            try
+            {
+                _context.Command = new SqlCommand(
+                    "insert into Contact (Id ,Name,Surname,Number1,Number2,Number3,Address,Email,Website,Description) values (@Id ,@Name ,@Surname ,@Number1 ,@Number2 ,@Number3 ,@Address ,@Email ,@Website ,@Description )",
+                    _context.Connection);
 
+                _context.Command.Parameters.Add("@Id", SqlDbType.UniqueIdentifier).Value = entity.Id;
+                _context.Command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = entity.Name;
+                _context.Command.Parameters.Add("@Surname", SqlDbType.NVarChar).Value = entity.Surname;
+                _context.Command.Parameters.Add("@Number1", SqlDbType.NVarChar).Value = entity.Number1;
+                _context.Command.Parameters.Add("@Number2", SqlDbType.NVarChar).Value = entity.Number2;
+                _context.Command.Parameters.Add("@Number3", SqlDbType.NVarChar).Value = entity.Number3;
+                _context.Command.Parameters.Add("@Address", SqlDbType.NVarChar).Value = entity.Address;
+                _context.Command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = entity.Email;
+                _context.Command.Parameters.Add("@Website", SqlDbType.NVarChar).Value = entity.Website;
+                _context.Command.Parameters.Add("@Description", SqlDbType.NVarChar).Value = entity.Description;
+
+                _context.SetConnection();
+                _context.ReturnValues = _context.Command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                _context.SetConnection();
+            }
+
+
+            return _context.ReturnValues;
         }
 
-        #endregion
+        public int Update(Contact entity)
+        {
+            try
+            {
+                _context.Command = new SqlCommand(
+                    "update Contact set Name=@Name,Surname=@Surname,Number1=@Number1,Number2=@Number2,Number3=@Number3,Address=@Address,Email=@Email,Description=@Description where Id=@Id",
+                    _context.Connection);
+
+                _context.Command.Parameters.Add("@Id", SqlDbType.UniqueIdentifier).Value = entity.Id;
+                _context.Command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = entity.Name;
+                _context.Command.Parameters.Add("@Surname", SqlDbType.NVarChar).Value = entity.Surname;
+                _context.Command.Parameters.Add("@Number1", SqlDbType.NVarChar).Value = entity.Number1;
+                _context.Command.Parameters.Add("@Number2", SqlDbType.NVarChar).Value = entity.Number2;
+                _context.Command.Parameters.Add("@Number3", SqlDbType.NVarChar).Value = entity.Number3;
+                _context.Command.Parameters.Add("@Address", SqlDbType.NVarChar).Value = entity.Address;
+                _context.Command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = entity.Email;
+                _context.Command.Parameters.Add("@Website", SqlDbType.NVarChar).Value = entity.Website;
+                _context.Command.Parameters.Add("@Description", SqlDbType.NVarChar).Value = entity.Description;
+
+                _context.SetConnection();
+                _context.ReturnValues = _context.Command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                _context.SetConnection();
+            }
+
+
+            return _context.ReturnValues;
+        }
+
+        public int Delete(Guid id)
+        {
+            try
+            {
+                _context.Command = new SqlCommand( "delete Contact where Id=@Id",_context.Connection);
+
+                _context.Command.Parameters.Add("@Id", SqlDbType.UniqueIdentifier).Value = id;
+
+                _context.SetConnection();
+                _context.ReturnValues = _context.Command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                _context.SetConnection();
+            }
+
+
+            return _context.ReturnValues;
+        }
     }
 }
 

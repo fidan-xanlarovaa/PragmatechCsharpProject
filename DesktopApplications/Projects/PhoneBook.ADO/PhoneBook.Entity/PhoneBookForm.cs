@@ -43,7 +43,7 @@ namespace PhoneBook.UI.CROSS
 
             switch (contacts)
             {
-                case 1:
+                case >=0:
                     AddToListBox();
                     break;
                 case (int)ResultCodeEnums.ModelStateNoValid:
@@ -137,7 +137,7 @@ namespace PhoneBook.UI.CROSS
 
                 switch (result)
                 {
-                    case 1:
+                    case > 0:
                         AddToListBox();
                         MessageBox.Show(GlobalConstants.UpdateSuccess, GlobalConstants.UpdateSuccess, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
@@ -162,7 +162,7 @@ namespace PhoneBook.UI.CROSS
 
             switch (result)
             {
-                case 1:
+                case > 0:
                     AddToListBox();
                     MessageBox.Show(GlobalConstants.DeleteSuccess, GlobalConstants.DeleteSuccess, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;

@@ -10,7 +10,6 @@ namespace PhoneBook.Core_.Repository
     public interface IContactRepository
     {
         int Add(Contact entity);
-        int AddRange(List<Contact> entity);
 
         int Update(Contact entity);
 

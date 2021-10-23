@@ -174,7 +174,7 @@ namespace PhoneBook.Business_.Services
                     string data = File.ReadAllText(path);
                     var contacts = JsonSerializer.Deserialize<List<Contact>>(data);
 
-                    _contactRepository.AddRange(contacts);
+                    //_contactRepository.AddRange(contacts);
 
                     return 1;
                 }
