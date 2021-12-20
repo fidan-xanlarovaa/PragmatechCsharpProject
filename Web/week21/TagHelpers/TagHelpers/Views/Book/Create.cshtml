@@ -1,0 +1,70 @@
+﻿@model TagHelpers.Models.BookModel
+
+@{
+    Layout = null;
+}
+
+<~
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Create</title>
+</head>
+<body>
+
+<h4>BookModel</h4>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <!--<input type="int" name="Id" value="" />
+                Bunu yuxaridaki kimi manual olaraq da yaza bilerik eslinde,
+                lakin artiq biz gedib modelde ne ise bir
+                deyiskilik edende meselen id typesini int yox string edende gelib yene burda da manual
+                olaarq deyismeliyik ki bu da eziyyetli isdir. asp-for ise bunu avtomatik edir-->
+
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <br><br><br><br><br><br>
+
+        Yuxaridakini Html Helperler vasitesi ile yazaq:
+
+        @Html.BeginForm("Create", "Book") <!--Create yazdiq cunku create actionuna gondereceyik-->
+        @Html.TextBox("Name")  <!-- <input asp-for="Name" class="form-control" /> bunu evez eledi-->
+        @Html.ValidationMessage("Name") <!--span asp-validation-for="Name" class="text-danger"></span>-->
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

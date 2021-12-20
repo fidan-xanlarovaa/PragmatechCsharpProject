@@ -1,0 +1,128 @@
+﻿@model IEnumerable<TagHelpers.Models.BookModel>  
+                                                  <!--eger model null olarsa error verir buna gore de sen onun null olub olmadiqini MUTLEQ yoxlamalisan
+                                                  (eks halda scalp foldingde error cixa biler). Templateni yaradir amma validasiyalari sen elemelisen--->
+
+
+<!-- HEMISE INSPECT EDIB BAXMAQ LAZIMDIR KI, TAG HEPERLER BIZE LAZIM OLANI YARADIB YA YOX, CHECK ETMEK UCUN-->
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body >
+    <p>
+        <a asp-action="Create">Create New</a>
+
+        <!-- <a asp-controller="Book" asp-action="Create">Create New</a> Bu formada controllerin hansi olduqunu da bildirmek olar. Amma biz hal hazirda
+                                                                    ele BookControllerin View-unda olduqum ucun buna ehtiyac yoxdur, eger basqa
+                                                                    controllerin Actionununistifade elesek (meselen Home) ond ayazmaqa ehtiyac var-->
+
+        <!--<a href="/Book/Create">content</a> Burada biz yuxaridakini manula formada yazmisiq. Book byrda controllerimi, Create ise onun actionudur.
+                                       BookController.cs get Create actionunun ise sal!!!!  -->
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Id) <!---DisplayNAMEFor propertinin adini gosterir-->
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Name
+
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            }
+
+        </tbody>
+
+
+    </table>
+
+
+    <table>
+        <br><br><br><br><br>
+        <p>BURADAN ASGIDAKI KODLAR SIRF HTML VE TAG HELPERLERI ANLAMAQ UCUN YAZILIB BIZ LAYIHE OLARAQ YUXARIDAKI ILE ISLEYIRIK</p>
+
+
+        @if (Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <label asp-for="@item.Id"></label><!---asp-for tag helperdir-->
+                        @Html.DisplayFor(modelItem => item.Id) <!---DisplayFor deyerini gosterir-->
+                    </td>
+                    <td>
+                        <label asp-for="@item.Name"></label>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+
+                        <label asp-for="@item.Description"></label> <!---Adini getirir DisplayNAMEFor kimi-->
+                        <input type="text" asp-for="@item.Description" />
+                        <!--Burda input kimi getirmisik yeni update craetede istifade etmek olar.
+                    Bu DisplayNAmeni inputun icersisine value kimi verirki,editlemeden evvel ne olduqun gorek--->
+
+                        @Html.DisplayFor(modelItem => item.Description) <!---Burda netice olaraq getirmisik yeni sadece gorsenir (SELECT sorqusu kimi)-->
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+
+        }
+
+    </table>
+
+    <!---Html Helper ile biz bir nov C# kodlari ile HTML yazmis oluruq-->
+
+    @Html.BeginForm() <!---Bu icerisinde verdiyimiz argumentleri yaranan tain atributlarini (type, name, id-si ) ne ad vermekucun istifade edirik-->
+    @Html.CheckBox("checkBox")
+    @Html.TextBox("textBox")
+    @Html.Password("password")
+    @Html.ValidationMessage("validation")  <!---Validation bize komek edirki inputdan gelen deyerin string ve ya int olmasininyoxlayaq,artiq if elese yazmali olmayacayiq-->
+
+</body>
+</html>

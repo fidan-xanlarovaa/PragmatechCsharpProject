@@ -114,9 +114,9 @@ namespace PhoneBook.Core_.Repository
         {
             try
             {
-                _context.Command = new SqlCommand(
-                    "insert into Contact (Id ,Name,Surname,Number1,Number2,Number3,Address,Email,Website,Description) values (@Id ,@Name ,@Surname ,@Number1 ,@Number2 ,@Number3 ,@Address ,@Email ,@Website ,@Description )",
-                    _context.Connection);
+                var sqlQuery = "insert into Contact (Id ,Name,Surname,Number1,Number2,Number3,Address,Email,Website,Description) values (@Id ,@Name ,@Surname ,@Number1 ,@Number2 ,@Number3 ,@Address ,@Email ,@Website ,@Description )";
+               
+                _context.Command = new SqlCommand(sqlQuery, _context.Connection);
 
                 _context.Command.Parameters.Add("@Id", SqlDbType.UniqueIdentifier).Value = entity.Id;
                 _context.Command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = entity.Name;
