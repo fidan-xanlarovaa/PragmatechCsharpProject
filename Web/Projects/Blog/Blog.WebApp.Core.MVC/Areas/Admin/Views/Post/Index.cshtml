@@ -1,5 +1,5 @@
 ﻿@using Blog.Shared.Utilities.ComplexTypes
-@model CategoryListDto
+@model PostListDto
 <div class="card mt-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
@@ -10,8 +10,17 @@
             <table class="table table-bordered" id="entitiesDataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>Title</th>
+                        <th>Category Id</th>
+                        <th>Content</th>
+                        <th>User Id </th>
+                        <th>Thumbnail</th>
+                        <th>Date</th>
+                        <th>Views Count</th>
+                        <th>Comment Count</th>
+                        <th> Seo Author</th>
+                        <th>Seo Description</th>
+                        <th>Seo Tags</th>
                         <th>Is Active?</th>
                         <th>Is Deleted?</th>
                         <th>Created Date</th>
@@ -22,8 +31,17 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>Title</th>
+                        <th>Category Id</th>
+                        <th>Content</th>
+                        <th>User Id </th>
+                        <th>Thumbnail</th>
+                        <th>Date</th>
+                        <th>Views Count</th>
+                        <th>Comment Count</th>
+                        <th> Seo Author</th>
+                        <th>Seo Description</th>
+                        <th>Seo Tags</th>
                         <th>Is Active?</th>
                         <th>Is Deleted?</th>
                         <th>Created Date</th>
@@ -37,16 +55,26 @@
                     {
                         foreach (var item in Model.Entities)
                         {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Description</td>
-            <td>@item.IsActive</td>
-            <td>@item.IsDeleted</td>
-            <td>@item.CreatedDate</td>
-            <td>@item.CreatedByName</td>
-            <td>@item.ModifiedDate</td>
-            <td>@item.ModifiedByName</td>
-        </tr>}
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Category Id</td>
+                        <td>@item.Content</td>
+                        <td>@item.User Id </td>
+                        <td>@item.Thumbnail</td>
+                        <td>@item.Date</td>
+                        <td>@item.ViewsCount</td>
+                        <td>@item.CommentCount</td>
+                        <td>@item.SeoAuthor</td>
+                        <td>@item.SeoDescription</td>
+                        <td>@item.SeoTags</td>
+                        <td>@item.IsActive</td>
+                        <td>@item.IsDeleted</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.ModifiedByName</td>
+                    </tr>
+}
                     }
                 </tbody>
             </table>
