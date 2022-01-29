@@ -23,16 +23,17 @@ namespace Blog.Shared.Data
             _context=context; //new() yazmamaq,her caqiranda yeni instance alinmasindan qacinmaq ucun injectiondan isifade eledik
             _dbSet = context.Set<TEntity>();
         }
-        public async Task AddAsync(TEntity entity)// burda biz hiss elemesek bele Task-dan sonra <> yazmamisiq deye void metoddur ve ona gore return yaza bilmerik
+        public async Task<TEntity> AddAsync(TEntity entity)// burda biz hiss elemesek bele Task-dan sonra <> yazmamisiq deye void metoddur ve ona gore return yaza bilmerik
 
         {
             await _dbSet.AddAsync(entity);
+            return entity;
         }
 
-        public async Task UpdateAsync(TEntity entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             await Task.Run(() => { _dbSet.Update(entity); }); //Run taskin metodududr ve o prqument olaraq action teleb edir. Action action-deleqatdir
-                                                              //ve void tipdedir.bir nov ozu de metoddur yeni . Bunu yazmaq ucun ananymous metod yaziriq.
+            return entity;                                    //ve void tipdedir.bir nov ozu de metoddur yeni . Bunu yazmaq ucun ananymous metod yaziriq.
                                                               //Bunu bu formada yazdiq cunki Update ucun async metod yoxdur.
         }
 
@@ -46,9 +47,10 @@ namespace Blog.Shared.Data
             return await _dbSet.CountAsync(predicate);
         }
 
-        public async  Task DeleteAsync(TEntity entity) 
+        public async Task<TEntity> DeleteAsync(TEntity entity) 
         {
             await Task.Run(() => { _dbSet.Remove(entity); });
+            return entity;
         }
 
         public async Task<IList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate = null, params Expression<Func<TEntity, object>>[] includeProperties)
@@ -74,7 +76,7 @@ namespace Blog.Shared.Data
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
-            throw new NotImplementedException(); IQueryable<TEntity> query = _dbSet;
+            IQueryable<TEntity> query = _dbSet;
 
             if (predicate is not null)
             {

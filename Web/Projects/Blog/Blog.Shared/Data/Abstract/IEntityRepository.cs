@@ -34,9 +34,9 @@ namespace Blog.Shared.Data
         Task<int> CountAsync(Expression<Func<T, bool>> predicate); //i.language=="english" ___ Bu da bize say qaytarir
 
         // crud
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task<T> AddAsync(T entity);
+        Task<T> UpdateAsync(T entity);
+        Task<T> DeleteAsync(T entity);
     }
 }
 
