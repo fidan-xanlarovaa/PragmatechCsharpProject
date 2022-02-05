@@ -24,7 +24,8 @@ namespace Blog.Shared.Data
         //select * from post p
         //left join comment c on p.id=c.PostId (params yazmaqimizin meqsedi meselen commenti useri includ ele demek ucundu)
         Task<T> GetAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);//asqida predicate=null
-         //yazmisiq cunki burda hec bir sert vermeden de datalari getire bilerik amma Get de cemi 1 data gelir deye mecburuq ki data verek id filan ve ya namesi filan olan
+         //yazmisiq cunki burda hec bir sert vermeden de datalari getire bilerik amma Get de cemi 1 data gelir deye mecburuq ki data verek id filan ve ya namesi filan
+         //olan
 
 
         Task<IList<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties); 
@@ -34,9 +35,9 @@ namespace Blog.Shared.Data
         Task<int> CountAsync(Expression<Func<T, bool>> predicate); //i.language=="english" ___ Bu da bize say qaytarir
 
         // crud
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task<T> AddAsync(T entity);
+        Task<T> UpdateAsync(T entity);
+        Task<T> DeleteAsync(T entity);
     }
 }
 

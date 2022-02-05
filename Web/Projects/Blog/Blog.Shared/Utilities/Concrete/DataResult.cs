@@ -1,10 +1,6 @@
 ﻿using Blog.Shared.Utilities.Abstract;
 using Blog.Shared.Utilities.ComplexTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blog.Shared.Utilities.Concrete
 {
@@ -12,6 +8,19 @@ namespace Blog.Shared.Utilities.Concrete
     {
         public DataResult(ResultStatus resultStatus, T data)
         {
+            ResultStatus = resultStatus;
+            Data = data;
+        }
+
+        public DataResult(ResultStatus resultStatus, string message)
+        {
+            Message = message;
+            ResultStatus = resultStatus;
+        }
+
+        public DataResult(ResultStatus resultStatus, string message, T data)
+        {
+            Message = message;
             ResultStatus = resultStatus;
             Data = data;
         }

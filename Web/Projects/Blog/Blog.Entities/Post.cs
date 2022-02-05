@@ -1,9 +1,6 @@
 ﻿using Blog.Shared.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blog.Entities
 {
@@ -14,7 +11,8 @@ namespace Blog.Entities
 
         }
 
-        public Post( int categoryId, string content, DateTime date, string note, string seoAuthor, string seoDescription, string seoTags, string thumbnail, string title, int userId) : base(note)
+        public Post( int categoryId, string content, DateTime date, string note, string seoAuthor, string seoDescription, string seoTags, string thumbnail,
+            string title, int userId) : base(note)
         {
             this.Title = title;
             this.CategoryId = categoryId;
@@ -24,8 +22,7 @@ namespace Blog.Entities
             this.SeoDescription = seoDescription;
             this.SeoTags = seoTags;
             this.Thumbnail = thumbnail;
-            this.UserId = userId;
-            
+            this.UserId = userId;            
         }
         public int UserId { get; set; }
         public int CategoryId { get; set; }

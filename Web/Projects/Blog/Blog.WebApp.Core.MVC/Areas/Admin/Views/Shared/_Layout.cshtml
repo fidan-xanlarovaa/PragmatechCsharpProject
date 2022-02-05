@@ -58,7 +58,8 @@
         </div>
     </div>
     @await Html.PartialAsync("_ScriptsPartial")
-    @await RenderSectionAsync("Scripts", false); <!--Bunu yazmaqla biz demek isteyirik ki, biz eger bu sehife ucun  her hansi bir js yazsaq onu burda
+    @await RenderSectionAsync("Scripts", false)
+    <!--Bunu yazmaqla biz demek isteyirik ki, biz eger bu sehife ucun  her hansi bir js yazsaq onu burda
                                                      tetbiq elesin. False o demekdir ki, butun sehifelere  aid etmeyine ehtiyac yoxdur. Yalnizca bu 
                                                      sehifede olsun-->
 

@@ -3,11 +3,11 @@
 <div class="card mt-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Categories
+        posts
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="entitiesDataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -85,28 +85,36 @@
 @section Scripts{
 
     <script>
-    $(document).ready(function () {
-            $('#entitiesDataTable').DataTable({
-                dom:
-                    "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
-                    "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-                buttons: [
-                    {
-                        text: 'Create',
-                        className: 'btn',
-                        action: function (e, dt, node, config) {
-                            alert('Button create');
-                        }
-                    },
-                    {
-                        text: 'Refresh',
-                        className: 'btn btn-warning',
-                        action: function (e, dt, node, config) {
-                            alert('Button refresh');
-                        }
-                    }
-                ]
+        // Call the dataTables jQuery plugin
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                //stateSave: true,
+                //"bDestroy": true
             });
-        });</script>
+        });
+    //$(document).ready(function () {
+    //        $('#entitiesDataTable').DataTable({
+    //            dom:
+    //                "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
+    //                "<'row'<'col-sm-12'tr>>" +
+    //                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+    //            buttons: [
+    //                {
+    //                    text: 'Create',
+    //                    className: 'btn',
+    //                    action: function (e, dt, node, config) {
+    //                        alert('Button create');
+    //                    }
+    //                },
+    //                {
+    //                    text: 'Refresh',
+    //                    className: 'btn btn-warning',
+    //                    action: function (e, dt, node, config) {
+    //                        alert('Button refresh');
+    //                    }
+    //                }
+    //            ]
+    //        });
+    //});
+    </script>
 }
