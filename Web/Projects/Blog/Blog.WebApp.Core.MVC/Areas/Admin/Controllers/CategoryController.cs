@@ -23,6 +23,7 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
             _categoryService = categoryService; //Burda new ile de instance ala bilerik amma bu duzgun deyil.. Burda biz deyirik ki, eger bunun istancesi
                                                 //varsa onu getir.
         }
+
         public async Task<IActionResult> Index()
         {
             var result = await _categoryService.GetAllAsync();
@@ -57,7 +58,7 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
             {
                 Partial = await this.RenderViewToStringAsync("_CreatePartial", request)
             };
-
+       
             return Json(errorViewModel);
         }
 

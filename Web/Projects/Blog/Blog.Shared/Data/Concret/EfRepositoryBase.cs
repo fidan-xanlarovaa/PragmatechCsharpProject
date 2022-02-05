@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace Blog.Shared.Data
 {
     public class EfRepositoryBase<TEntity> : IEntityRepository<TEntity> where TEntity : class, IEntity, new() //IEntityRepositorinin implementasiyasidir
-                                                                                                              // Adina ona gore EF yazmisiq ki bu entity frameworkun implementasiyasidir
+                                                                                                              // Adina ona gore EF yazmisiq ki bu entity frameworkun
+                                                                                                              // implementasiyasidir
     {
         #region fields
 
@@ -23,7 +24,8 @@ namespace Blog.Shared.Data
             _context=context; //new() yazmamaq,her caqiranda yeni instance alinmasindan qacinmaq ucun injectiondan isifade eledik
             _dbSet = context.Set<TEntity>();
         }
-        public async Task<TEntity> AddAsync(TEntity entity)// burda biz hiss elemesek bele Task-dan sonra <> yazmamisiq deye void metoddur ve ona gore return yaza bilmerik
+        public async Task<TEntity> AddAsync(TEntity entity)// burda biz hiss elemesek bele Task-dan sonra <> yazmamisiq deye void metoddur ve ona gore return
+                                                           // yaza bilmerik
 
         {
             await _dbSet.AddAsync(entity);

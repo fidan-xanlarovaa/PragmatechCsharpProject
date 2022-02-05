@@ -26,7 +26,7 @@ namespace Blog.Services.Concret
         public CategoryManager(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
-            _mapper = mapper; ;
+            _mapper = mapper; 
         }
         #endregion
 

@@ -84,10 +84,12 @@
 
 @section Scripts{
 
-    <script asp-append-version="true">
+    <script>
         // Call the dataTables jQuery plugin
         $(document).ready(function () {
             $('#dataTable').DataTable({
+                //stateSave: true,
+                //"bDestroy": true
             });
         });
     //$(document).ready(function () {

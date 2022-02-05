@@ -2,36 +2,38 @@
 
 ////// AJAX-sin isi client terfede javaScript vasitesi ile back-endimize sorqu atmaqdir. Yeni biz bura GET ve POST sorqulari gonderirik,
 //////controllerimizden de buna uyqun arxaya json bir data qaytaririrq
-//$('#entitiesDataTable').DataTable({
-//    dom:
-//        "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
-//        "<'row'<'col-sm-12'tr>>" +
-//        "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-//    buttons: [
-//        {
-//            text: 'Create',
-//            attr: {
-//                id: "btnCreate"
-//            },
-//            className: 'btn',
-//            action: function (e, dt, node, config) {
-//                /*alert('Button create');*/
-//            }
-//        },
-//        {
-//            text: 'Refresh',
-//            className: 'btn btn-warning',
-//            action: function (e, dt, node, config) {
-//                alert('Button refresh');
-//            }
-//        }
-//    ]
-//});
 $(document).ready(function () {
 
-   /* $('#entitiesDataTable').DataTable();*/
-   //#region  dataTable
-    
+    /* $('#entitiesDataTable').DataTable();*/
+    //#region  dataTable
+    $('#entitiesDataTable').DataTable({
+        "bServerSide": false,
+        dom:
+            "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+        buttons: [
+            {
+                text: 'Create',
+                attr: {
+                    id: "btnCreate"
+                },
+                className: 'btn',
+                action: function (e, dt, node, config) {
+                    /*alert('Button create');*/
+                }
+            },
+            {
+                text: 'Refresh',
+                className: 'btn btn-warning',
+                action: function (e, dt, node, config) {
+                    alert('Button refresh');
+                }
+            }
+        ],
+        "bDestroy": true
+    });
+
     //#endregion  dataTable
 
 
