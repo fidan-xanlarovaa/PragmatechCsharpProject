@@ -1,50 +1,56 @@
-﻿using Blog.Data.Abstract;
+﻿using AutoMapper;
+using Blog.Data.Abstract;
 using Blog.Entities;
 using Blog.Entities.Dtos;
 using Blog.Services.Abstract;
+using Blog.Shared.Localization;
 using Blog.Shared.Utilities.Abstract;
 using Blog.Shared.Utilities.ComplexTypes;
-using Blog.Shared.Utilities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Blog.Shared.Utilities.Results.Abstract;
 using System.Threading.Tasks;
 
 namespace Blog.Services.Concret
 {
-    public class CategoryManager : ICategoryService
+    public class CategoryManager : BaseServiceResult,ICategoryService
     {
         #region fields
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
         #endregion
 
         #region ctor
-        public CategoryManager(IUnitOfWork unitOfWork)
+        public CategoryManager(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         #endregion
 
         #region methods
 
-        public async Task<IDataResult<CategoryDto>> GetAsync(int id)
+        public async Task<IResult<CategoryDto>> GetAsync(int id)
         {
-            var entity = await _unitOfWork.Categories.GetAsync(i => i.Id == id, c => c.Posts); //categoriye uyqun butun postlari getirsin
+            var entity = await _unitOfWork.Categories.GetAsync(i => i.Id == id); // c => c.Posts categoriye uyqun butun postlari getirsin
 
-            if (entity != null)
+            if (entity is null)
             {
-                var dto = new CategoryDto()
-                {
-                    Entity = entity,
-                    ResultStatus = ResultStatus.Success
-                };
-                return new DataResult<CategoryDto>(resultStatus: ResultStatus.Success, dto);
+                return NotFound<CategoryDto>(BaseLocalization.NoDataAvailableOnRequest);
             }
-            return new DataResult<CategoryDto>(resultStatus: ResultStatus.Error, null, "not found");
+
+            _mapper.Map<CategoryDto>(entity);
+            //if (entity != null)
+            //{
+            //    var dto = new CategoryDto()
+            //    {
+            //        Entity = entity,
+            //        ResultStatus = ResultStatus.Success
+            //    };
+            //    return new Result<CategoryDto>(resultStatus: ResultStatus.Success, dto);
+            //}
+            //return new Result<CategoryDto>(resultStatus: ResultStatus.Error, null, "not found");
         }
 
-        public async Task<IDataResult<CategoryListDto>> GetAllAsync()
+        public async Task<IResult<CategoryListDto>> GetAllAsync()
         {
             var entities = await _unitOfWork.Categories.GetAllAsync(null, c => c.Posts);
 
@@ -55,13 +61,13 @@ namespace Blog.Services.Concret
                     Entities = entities,
                     ResultStatus = ResultStatus.Success
                 };
-                return new DataResult<CategoryListDto>(ResultStatus.Success, dto);
+                return new Result<CategoryListDto>(ResultStatus.Success, dto);
             }
 
-            return new DataResult<CategoryListDto>(ResultStatus.Error, null, "not found");
+            return new Result<CategoryListDto>(ResultStatus.Error, null, "not found");
         }
 
-        public async Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAsync()
+        public async Task<IResult<CategoryListDto>> GetAllByNonDeletedAsync()
         {
             var entities = await _unitOfWork.Categories.GetAllAsync(c => !c.IsDeleted, c => c.Posts); // !c.IsDeleted  => c.IsDeleted==false demekdir
             if (entities.Count > -1)
@@ -71,10 +77,10 @@ namespace Blog.Services.Concret
                     Entities = entities,
                     ResultStatus = ResultStatus.Success
                 };
-                return new DataResult<CategoryListDto>(ResultStatus.Success, dto);
+                return new Result<CategoryListDto>(ResultStatus.Success, dto);
             }
 
-            return new DataResult<CategoryListDto>(ResultStatus.Error, null, "not found");
+            return new Result<CategoryListDto>(ResultStatus.Error, null, "not found");
         }
 
         public async Task<IResult> AddAsync(CategoryAddDto dto, string createdByName)

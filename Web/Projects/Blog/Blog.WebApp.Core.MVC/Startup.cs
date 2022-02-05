@@ -1,3 +1,4 @@
+using Blog.Services.AutoMapper;
 using Blog.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
