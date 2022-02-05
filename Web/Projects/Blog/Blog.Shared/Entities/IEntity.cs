@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Blog.Shared.Entities
 {
+    /// <summary>
+    ///  Repository pattern istifade zamani istifade edilecek.
+    /// </summary>
     public interface IEntity
     {
     }

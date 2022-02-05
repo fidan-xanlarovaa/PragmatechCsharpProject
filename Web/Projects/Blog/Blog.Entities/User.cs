@@ -1,10 +1,6 @@
 ﻿using Blog.Shared.Entities;
 using Blog.Shared.Extentions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blog.Entities
 {
@@ -20,9 +16,6 @@ namespace Blog.Entities
         public string PasswordHash { get; set; }
         public string Avatar { get; set; }
         public string Bio { get; set; }
-
-
-
 
         // relations 
 
@@ -47,3 +40,6 @@ namespace Blog.Entities
         }
     }
 }
+
+
+

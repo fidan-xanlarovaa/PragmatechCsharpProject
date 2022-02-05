@@ -1,5 +1,4 @@
-﻿
-using Blog.Entities;
+﻿using Blog.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

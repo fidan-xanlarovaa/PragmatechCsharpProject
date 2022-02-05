@@ -1,16 +1,7 @@
 ﻿using Blog.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-//Constraint olmayan propertileri de qeyd etmeliyik???????????????????????????????
-
-
-//
 
 namespace Blog.Data.Concrete.EntitiyFramework.Configurations
 {
@@ -35,24 +26,9 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
             // seed---
             var entities = new List<Category>()
             {
-                new()
-                {
-                    Id = 1,
-                    Name = "C#",
-                    Description = "C#"
-                },
-                new()
-                {
-                    Id = 2,
-                    Name = "C++",
-                    Description = "C++"
-                },
-                new()
-                {
-                    Id = 3,
-                    Name = "JavaScript",
-                    Description = "JavaScript"
-                }
+                new(){ Id = 1,  Name = "C#",  Description = "C#"},
+                new(){ Id = 2,  Name = "C++",  Description = "C++"},
+                new(){Id = 3, Name = "JavaScript",Description = "JavaScript" }                               
             };
             entities.ForEach(i => {
                 i.SetCreatedByName("InitialCreate");
@@ -62,6 +38,4 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
                                        // bu sekilde oture bilerik)
         }
     }
-
-
 }

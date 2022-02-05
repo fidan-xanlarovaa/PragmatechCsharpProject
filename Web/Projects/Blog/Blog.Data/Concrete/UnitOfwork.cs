@@ -2,10 +2,6 @@
 using Blog.Data.Concrete.EntitiyFramework.Context;
 using Blog.Data.Concrete.EntitiyFramework.Repositories;
 using Blog.Data.Concrete.EntityFramework.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Blog.Data.Concrete
