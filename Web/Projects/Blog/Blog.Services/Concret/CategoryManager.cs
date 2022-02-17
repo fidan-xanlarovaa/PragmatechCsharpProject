@@ -7,6 +7,7 @@ using Blog.Shared.Localization;
 using Blog.Shared.Utilities.Abstract;
 using Blog.Shared.Utilities.ComplexTypes;
 using Blog.Shared.Utilities.Results.Abstract;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Blog.Services.Concret
@@ -37,99 +38,89 @@ namespace Blog.Services.Concret
                 return NotFound<CategoryDto>(BaseLocalization.NoDataAvailableOnRequest);
             }
 
-            _mapper.Map<CategoryDto>(entity);
-            //if (entity != null)
-            //{
-            //    var dto = new CategoryDto()
-            //    {
-            //        Entity = entity,
-            //        ResultStatus = ResultStatus.Success
-            //    };
-            //    return new Result<CategoryDto>(resultStatus: ResultStatus.Success, dto);
-            //}
-            //return new Result<CategoryDto>(resultStatus: ResultStatus.Error, null, "not found");
+            var outputDto=_mapper.Map<CategoryDto>(entity);
+
+            return Ok(outputDto);
         }
 
-        public async Task<IResult<CategoryListDto>> GetAllAsync()
-        {
-            var entities = await _unitOfWork.Categories.GetAllAsync(null, c => c.Posts);
+        public async Task<IResult<IList<CategoryDto>>> GetAllAsync()
 
-            if (entities.Count > -1) // ici bos olsa bele data getirsin yeni o veziyyetinde
+        {
+            var entities = await _unitOfWork.Categories.GetAllAsync();
+
+            if (entities is null)
             {
-                var dto = new CategoryListDto()
-                {
-                    Entities = entities,
-                    ResultStatus = ResultStatus.Success
-                };
-                return new Result<CategoryListDto>(ResultStatus.Success, dto);
+                return NotFound<IList<CategoryDto>>(BaseLocalization.NoDataAvailableOnRequest);
             }
 
-            return new Result<CategoryListDto>(ResultStatus.Error, null, "not found");
+            var outputDto = _mapper.Map<IList<CategoryDto>>(entities);
+
+            return Ok(outputDto);
         }
 
-        public async Task<IResult<CategoryListDto>> GetAllByNonDeletedAsync()
+        public async Task<IResult<IList<CategoryDto>>> GetAllByNonDeletedAsync()
         {
-            var entities = await _unitOfWork.Categories.GetAllAsync(c => !c.IsDeleted, c => c.Posts); // !c.IsDeleted  => c.IsDeleted==false demekdir
-            if (entities.Count > -1)
+            var entities = await _unitOfWork.Categories.GetAllAsync(c => !c.IsDeleted);
+
+            if (entities is null)
             {
-                var dto = new CategoryListDto()
-                {
-                    Entities = entities,
-                    ResultStatus = ResultStatus.Success
-                };
-                return new Result<CategoryListDto>(ResultStatus.Success, dto);
+                return NotFound<IList<CategoryDto>>(BaseLocalization.NoDataAvailableOnRequest);
             }
 
-            return new Result<CategoryListDto>(ResultStatus.Error, null, "not found");
+            var outputDto = _mapper.Map<IList<CategoryDto>>(entities);
+            return Ok(outputDto);
         }
 
-        public async Task<IResult> AddAsync(CategoryAddDto dto, string createdByName)
+        public async Task<IResult<CategoryDto>> AddAsync(CategoryAddDto dto, string createdByName)
         {
-            var entity = new Category(dto.Name, dto.Description, dto.Note);
-            entity.SetIsActive(dto.IsActive);
+            var entity = _mapper.Map<Category>(dto);
             entity.SetCreatedByName(createdByName);
-            await _unitOfWork.Categories.AddAsync(entity);
-            var result = await _unitOfWork.SaveChangesAsync();
-            if (result > 0) return new Result(ResultStatus.Success, $"{entity.Name} created");
-            return new Result(ResultStatus.Error, $"{entity.Name} not created");
+            var created = await _unitOfWork.Categories.AddAsync(entity);
+            await _unitOfWork.SaveChangesAsync();
+            var outputDto = _mapper.Map<CategoryDto>(created);
+            return Updated(outputDto);
         }
 
-        public async Task<IResult> UpdateAsync(CategoryUpdateDto dto, string modifiedByName)
+        public async Task<IResult<CategoryDto>> UpdateAsync(CategoryUpdateDto dto, string modifiedByName)
         {
-            var entity = await _unitOfWork.Categories.GetAsync(c => c.Id == dto.Id);
-            if (entity == null) return new Result(ResultStatus.Error, $"{dto.Id} not found");
-            entity.Name = dto.Name;
-            entity.Description = dto.Description;
-            entity.Note = dto.Note;
-            entity.SetIsActive(dto.IsActive);
-            entity.SetModifiedByName(modifiedByName);
-            entity.SetIsDeleted(dto.IsDeleted);
-            await _unitOfWork.Categories.UpdateAsync(entity);
-            var result = await _unitOfWork.SaveChangesAsync();
-            if (result > 0) return new Result(ResultStatus.Success, $"{entity.Name} modified");
-            return new Result(ResultStatus.Error, $"{entity.Name} not modified");
+            var foundedEntity = await _unitOfWork.Categories.GetAsync(c => c.Id == dto.Id);
+            if(foundedEntity is null) return NotFound<CategoryDto>(BaseLocalization.NoDataAvailableOnRequest);
+            var entity = _mapper.Map<CategoryUpdateDto,Category>(dto, foundedEntity);
+            var updated = await _unitOfWork.Categories.UpdateAsync(entity);
+            await _unitOfWork.SaveChangesAsync();
+            var outputDto = _mapper.Map<CategoryDto>(updated);
+            return Created(outputDto);
         }
 
-        public async Task<IResult> DeleteAsync(int id, string modifiedByName)
+        public async Task<IResult<CategoryDto>> DeleteAsync(int id, string modifiedByName)
         {
             var entity = await _unitOfWork.Categories.GetAsync(c => c.Id == id);
-            if (entity == null) return new Result(ResultStatus.Error, $"{id} not found");
-            entity.SetIsDeleted(false);
+            if (entity == null)
+                return NotFound<CategoryDto>(BaseLocalization.NoDataAvailableOnRequest);
+            entity.SetIsDeleted(true);
             entity.SetModifiedByName(modifiedByName);
-            await _unitOfWork.Categories.UpdateAsync(entity);
-            var result = await _unitOfWork.SaveChangesAsync();
-            if (result > 0) return new Result(ResultStatus.Success, $"{entity.Name} removed");
-            return new Result(ResultStatus.Error, $"{entity.Name} not removed");
+            var deletedEntity = await _unitOfWork.Categories.UpdateAsync(entity);
+            await _unitOfWork.SaveChangesAsync();
+            var outputDto = _mapper.Map<CategoryDto>(deletedEntity);
+            return Deleted(outputDto);
         }
 
-        public async Task<IResult> HardDeleteAsync(int id)
+        public async Task<IResult<CategoryUpdateDto>> GetUpdateDtoAsync(int id)
+        {
+            var entity = await _unitOfWork.Categories.GetAsync(i => i.Id == id);
+            if (entity is null)
+                return NotFound<CategoryUpdateDto>(BaseLocalization.NoDataAvailableOnRequest);
+            var outputDto = _mapper.Map<CategoryUpdateDto>(entity);
+            return Ok(outputDto);
+        }
+        public async Task<IResult<bool>> HardDeleteAsync(int id)
         {
             var entity = await _unitOfWork.Categories.GetAsync(c => c.Id == id);
-            if (entity == null) return new Result(ResultStatus.Error, $"{id} not found");
+            if (entity == null)
+                return NotFound<bool>(BaseLocalization.NoDataAvailableOnRequest);
             await _unitOfWork.Categories.DeleteAsync(entity);
-            var result = await _unitOfWork.SaveChangesAsync();
-            if (result > 0) return new Result(ResultStatus.Success, $"{entity.Name} removed");
-            return new Result(ResultStatus.Error, $"{entity.Name} not removed");
+            await _unitOfWork.SaveChangesAsync();
+            return Deleted(true);
         }
 
         #endregion

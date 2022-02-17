@@ -28,7 +28,7 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
         {
             var result = await _categoryService.GetAllAsync();
 
-            return View(result.Data);
+            return View(result);
         }
 
         [HttpGet]
@@ -44,11 +44,11 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
             {
                 var result = await _categoryService.AddAsync(request, "Admin");
 
-                if (result.ResultStatus == ResultStatus.Success)
+                if (result.IsSuccess)
                 {
                     var successViewModel = new CategoryCreateAjaxViewModel()
                     {
-                        Dto = result.Data,
+                        Result = result,
                         Partial = await this.RenderViewToStringAsync("_CreatePartial", request)
                     };
                     return Json(successViewModel);
@@ -56,45 +56,41 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
             }
             var errorViewModel = new CategoryCreateAjaxViewModel()
             {
+                AddDto = request,
                 Partial = await this.RenderViewToStringAsync("_CreatePartial", request)
             };
-       
+
             return Json(errorViewModel);
         }
-
         /**/
 
+        #region update
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
             var result = await _categoryService.GetUpdateDtoAsync(id);
-
-            if (result.ResultStatus != ResultStatus.Success)
-                return NotFound();
-
             return PartialView("_UpdatePartial", result.Data);
         }
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(CategoryUpdateDto request)
         {
             if (ModelState.IsValid)
             {
                 var result = await _categoryService.UpdateAsync(request, "Admin");
 
-                if (result.ResultStatus == ResultStatus.Success)
+                if (result.IsSuccess)
                 {
                     var successViewModel = new CategoryUpdateAjaxViewModel()
                     {
-                        Dto = result.Data,
+                        Result = result,
                         Partial = await this.RenderViewToStringAsync("_UpdatePartial", request)
                     };
                     return Json(successViewModel);
                 }
             }
-
-            
 
             var errorViewModel = new CategoryUpdateAjaxViewModel()
             {
@@ -104,12 +100,16 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
             return Json(errorViewModel);
         }
 
+
+        #endregion
+        #region delete
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<JsonResult> Delete(int id)
         {
             var result = await _categoryService.DeleteAsync(id, "Admin");
-
             return Json(result);
         }
+        #endregion
     }
 }

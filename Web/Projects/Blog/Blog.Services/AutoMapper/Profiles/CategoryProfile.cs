@@ -12,7 +12,11 @@ namespace Blog.Services.AutoMapper
     public class CategoryProfile : Profile
     {
         public CategoryProfile()
+
         {
+            CreateMap<CategoryDto, Category>();
+            CreateMap<Category,CategoryDto>();
+
             CreateMap<CategoryAddDto, Category>();
             // !!! .ForMember(dest=>dest.Description,opt=>opt.MapFrom(src=>src.Description2)); 1 ci olan CategoryDto ikinci categorydir
             CreateMap<Category, CategoryAddDto>();

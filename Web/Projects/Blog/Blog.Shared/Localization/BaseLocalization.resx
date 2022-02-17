@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CreatedSuccesfully" xml:space="preserve">
+    <value>Data Created Succesfully</value>
+  </data>
   <data name="NoDataAvailableOnRequest" xml:space="preserve">
     <value>Data does not exist</value>
+  </data>
+  <data name="NotFoundCodeGenerator" xml:space="preserve">
+    <value>There isn't any data to given parameters</value>
   </data>
 </root>

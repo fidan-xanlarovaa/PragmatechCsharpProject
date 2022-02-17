@@ -24,17 +24,17 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
             builder.Property(i => i.Description).HasMaxLength(500).IsRequired();
 
             // seed---
-            var entities = new List<Category>()
-            {
-                new(){ Id = 1,  Name = "C#",  Description = "C#"},
-                new(){ Id = 2,  Name = "C++",  Description = "C++"},
-                new(){Id = 3, Name = "JavaScript",Description = "JavaScript" }                               
-            };
-            entities.ForEach(i => {
-                i.SetCreatedByName("InitialCreate");
-                i.SetModifiedByName("InitialCreate");
-            });
-            builder.HasData(entities); // cedvel yarananda bu datalar tableye insert olunsun. (Mes: Adminler sonradan yaranmir,onlari onceden
+            //var entities = new List<Category>()
+            //{
+            //    new(){ Id = 1,  Name = "C#",  Description = "C#"},
+            //    new(){ Id = 2,  Name = "C++",  Description = "C++"},
+            //    new(){Id = 3, Name = "JavaScript",Description = "JavaScript" }                               
+            //};
+            //entities.ForEach(i => {
+            //    i.SetCreatedByName("InitialCreate");
+            //    i.SetModifiedByName("InitialCreate");
+            //});
+            //builder.HasData(entities); // cedvel yarananda bu datalar tableye insert olunsun. (Mes: Adminler sonradan yaranmir,onlari onceden
                                        // bu sekilde oture bilerik)
         }
     }

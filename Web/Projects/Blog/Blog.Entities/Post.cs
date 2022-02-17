@@ -1,4 +1,5 @@
-﻿using Blog.Shared.Entities;
+﻿using Blog.Entities.Concrete;
+using Blog.Shared.Entities;
 using System;
 using System.Collections.Generic;
 

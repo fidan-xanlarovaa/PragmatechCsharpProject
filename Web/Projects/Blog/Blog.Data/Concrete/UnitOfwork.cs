@@ -1,6 +1,6 @@
 ﻿using Blog.Data.Abstract;
-using Blog.Data.Concrete.EntitiyFramework.Context;
 using Blog.Data.Concrete.EntitiyFramework.Repositories;
+using Blog.Data.Concrete.EntityFramework.Context;
 using Blog.Data.Concrete.EntityFramework.Repositories;
 using System.Threading.Tasks;
 
