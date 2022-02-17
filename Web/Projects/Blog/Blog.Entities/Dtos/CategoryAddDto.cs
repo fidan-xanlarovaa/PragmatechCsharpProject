@@ -25,7 +25,7 @@ namespace Blog.Entities.Dtos
         ///  Name property itself
         /// 
         /// </summary>
-
+         
         public string Name { get; set; } 
 
         [Required(ErrorMessage = "{0} is required.")]
