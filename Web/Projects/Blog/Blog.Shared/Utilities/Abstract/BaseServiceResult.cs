@@ -32,5 +32,10 @@ namespace Blog.Shared.Utilities.Abstract
         {
             return new Result<TResult>(ServiceResultCode.Deleted, BaseLocalization.NoDataAvailableOnRequest, output);
         }
+
+        protected IResult<TResult> Error<TResult>(params string[] errors)
+        {
+            return new Result<TResult>(ServiceResultCode.Error, default(TResult), errors);
+        }
     }
 }

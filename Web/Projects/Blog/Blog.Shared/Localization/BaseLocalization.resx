@@ -126,4 +126,8 @@
   <data name="NotFoundCodeGenerator" xml:space="preserve">
     <value>There isn't any data to given parameters</value>
   </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name is required</value>
+    <comment>jsdvbns;adbl</comment>
+  </data>
 </root>

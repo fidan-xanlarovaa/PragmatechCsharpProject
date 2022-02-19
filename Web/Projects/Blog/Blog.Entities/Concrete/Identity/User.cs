@@ -21,27 +21,6 @@ namespace Blog.Entities.Concrete
             }
         }
     }
-
-
-    public class UserClaim : IdentityUserClaim<int>
-    {
-
-    }
-
-    public class UserLogin : IdentityUserLogin<int>
-    {
-
-    }
-
-    public class UserRole : IdentityUserRole<int>
-    {
-
-    }
-
-    public class UserToken : IdentityUserToken<int>
-    {
-
-    }
 }
 
 //using Blog.Shared.Entities;
@@ -93,5 +72,6 @@ namespace Blog.Entities.Concrete
 /// 1. data hissesine Microsoft.AspNetCore.Identity.EntityFrameworkCore paketini yuklemek
 /// 2. entity layerine Microsoft.Extensions.Identity.Stores paketini yuklemek
 /// 3. service layerine Microsoft.AspNetCore.Identity paketini yuklemek
+/// 
 /// 
 /// </summary>
