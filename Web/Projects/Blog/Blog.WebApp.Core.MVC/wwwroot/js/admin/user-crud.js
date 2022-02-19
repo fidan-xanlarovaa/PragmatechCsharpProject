@@ -21,6 +21,7 @@
 
                         if (response.action) // create
                         {
+                  
                             insertedRowToDataTable(entity, makeDataTableRowObj(entity));
                         } else // update
                         {
