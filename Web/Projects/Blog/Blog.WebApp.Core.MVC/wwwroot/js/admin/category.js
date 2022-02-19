@@ -1,6 +1,4 @@
-﻿
-
-////// AJAX-sin isi client terfede javaScript vasitesi ile back-endimize sorqu atmaqdir. Yeni biz bura GET ve POST sorqulari gonderirik,
+﻿////// AJAX-sin isi client terfede javaScript vasitesi ile back-endimize sorqu atmaqdir. Yeni biz bura GET ve POST sorqulari gonderirik,
 //////controllerimizden de buna uyqun arxaya json bir data qaytaririrq
 $(document).ready(function () {
 

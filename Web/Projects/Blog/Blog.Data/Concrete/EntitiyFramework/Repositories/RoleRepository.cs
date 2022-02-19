@@ -1,5 +1,6 @@
 ﻿using Blog.Data.Abstract;
 using Blog.Entities;
+using Blog.Entities.Concrete;
 using Blog.Shared.Data;
 using Microsoft.EntityFrameworkCore;
 using System;

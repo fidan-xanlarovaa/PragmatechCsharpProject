@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blog.Entities;
+using Blog.Entities.Concrete;
 using Blog.Shared.Data;
 
 namespace Blog.Data.Abstract

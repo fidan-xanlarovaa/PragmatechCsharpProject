@@ -23,15 +23,15 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
                 .HasForeignKey(i => i.PostId); //foreign key olan column
 
             //seed
-            var entity = new Comment()
-            {
-                Id = 1,
-                PostId = 1,
-                Text = "lorem ipsum sit amet sasj"
-            };
-            entity.SetCreatedByName("InitialCreate");
-            entity.SetModifiedByName("InitialCreate");
-            builder.HasData(entity);
+            //var entity = new Comment()
+            //{
+            //    Id = 1,
+            //    PostId = 1,
+            //    Text = "lorem ipsum sit amet sasj"
+            ////};
+            //entity.SetCreatedByName("InitialCreate");
+            //entity.SetModifiedByName("InitialCreate");
+            //builder.HasData(entity);
         }
     }
 }
