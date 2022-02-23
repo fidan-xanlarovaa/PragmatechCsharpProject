@@ -2,6 +2,7 @@
 using Blog.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace Blog.Data.Concrete.EntityFramework.Configurations
 {
@@ -33,6 +34,32 @@ namespace Blog.Data.Concrete.EntityFramework.Configurations
 
             // Each Role can have many associated RoleClaims
             builder.HasMany<RoleClaim>().WithOne().HasForeignKey(rc => rc.RoleId).IsRequired();
+
+            builder.HasData(new Role()
+            {
+                Id = 1, // Hem userde hem rolede id - leri elle vermisik,cunki ilk yarananlardir
+                        // deye biz yaziriqki sonradan avtomatikgenerate ede bilsin
+                Name = "Admin",
+                NormalizedName = "ADMIN",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+            },
+                new Role()
+                {
+                    Id = 2,
+                    Name = "Editor",
+                    NormalizedName = "EDITOR",
+                    ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+                },
+                new Role()
+                {
+                    Id = 3,
+                    Name = "Member",
+                    NormalizedName = "MEMBER",
+                    ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+                });
         }
     }
 }
