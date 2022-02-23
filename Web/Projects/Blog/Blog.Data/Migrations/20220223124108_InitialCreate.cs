@@ -262,6 +262,28 @@ namespace Blog.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                schema: "Identity",
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { 1, "5e21ab49-edf0-4870-a4ab-fb372279cde0", "Admin", "ADMIN" },
+                    { 2, "6edf4b55-0001-4453-b64d-87c7d6735cb1", "Editor", "EDITOR" },
+                    { 3, "a7568035-7c04-4737-890f-9236482866c9", "Member", "MEMBER" }
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Identity",
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Avatar", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { 3, 0, "Users/defaultUser.png", "46fe86a0-c96a-4040-85fa-be8de74a260f", "memberUser@gmail.com", true, false, null, "MEMBERUSER@GMAIL.COM", "MEMBERUSER", "AQAAAAEAACcQAAAAEBWVXHENSgMUgwr9TOIjSEwSMfadeicFJwRZdRJtT42XYfSht0II5SOBkoUdxlQBDw==", "+9949999999", true, "0ab0bfbd-6635-4997-926e-ddf99a91393b", false, "memberUser" },
+                    { 1, 0, "Users/defaultUser.png", "80432d19-a453-451d-b9c5-e6fc08250b5e", "adminUser@gmail.com", true, false, null, "ADMINUSER@GMAIL.COM", "ADMINUSER", "AQAAAAEAACcQAAAAEDnl/pVRGAzGpCtwhLUIboPjGLvI/8SHs9id30195C/eoIS71nAbpT824p/14ztxNA==", "+9949999999", true, "5505ca45-b5d3-4636-8d4e-4429597b060e", false, "adminUser" },
+                    { 2, 0, "Users/defaultUser.png", "f4635db0-09ad-4c9b-99f2-509813b7634f", "editorUser@gmail.com", true, false, null, "EDITORUSER@GMAIL.COM", "EDITORUSER", "AQAAAAEAACcQAAAAEJ2oKsTcZJEBVpovtNdRu/9tUwaTwRrcPj4v2irVdpk7Y+OFeQ4lZU8ZE+v5YHjDbw==", "+9949999999", true, "94b533d9-ce25-445b-b8eb-8760df922b47", false, "editorUser" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 schema: "Identity",
