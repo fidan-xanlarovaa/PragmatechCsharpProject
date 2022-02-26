@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Entities.Concrete;
+using Blog.WebAPP.CORE.MVC.Areas.Admin.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,15 +17,29 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.ViewComponents
     {
         #region fields
 
+        private readonly UserManager<User> _userManager;
         #endregion
 
         #region ctor
-        public LeftSideBarViewComponent()
-        {
 
+        public LeftSideBarViewComponent(UserManager<User> userManager)
+        {
+            _userManager = userManager;
         }
         #endregion
 
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User); // User haqqinda melumatlar
 
+            var roles = await _userManager.GetRolesAsync(user); //Userin rolllari
+
+            var viewModel = new UserWithRolesViewModel
+            {
+                User = user,
+                Roles = roles
+            };
+            return View(viewModel);
+        }
     }
 }
