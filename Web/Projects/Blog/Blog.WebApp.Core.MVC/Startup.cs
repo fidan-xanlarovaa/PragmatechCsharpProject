@@ -1,3 +1,133 @@
+using System;
+using System.Text.Json.Serialization;
+//using Blog.Services.AutoMapper;
+//using Blog.Services.Extensions;
+//using Blog.Shared.Extensions;
+//using Microsoft.AspNetCore.Builder;
+//using Microsoft.AspNetCore.Hosting;
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.Hosting;
+//using Newtonsoft.Json;
+//using Newtonsoft.Json.Serialization;
+
+//namespace Blog.WebAPP.CORE.MVC
+//{
+//    public class Startup
+//    {
+//        public Startup(IConfiguration configuration)
+//        {
+//            Configuration = configuration;
+//        }
+
+//        public IConfiguration Configuration { get; }
+
+//        // This method gets called by the runtime. Use this method to add services to the container.
+//        public void ConfigureServices(IServiceCollection services)
+//        {
+
+//            services.AddControllersWithViews()
+//                .AddRazorRuntimeCompilation()
+//                .AddNewtonsoftJson(options =>
+//                {
+//                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+//                })
+//                .AddJsonOptions(options =>
+//                {
+//                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+//                });
+
+//            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+//            {
+//                ContractResolver = new CamelCasePropertyNamesContractResolver()
+//            };
+
+//            services.AddSession();
+//            services.LoadServices();
+//            services.LoadSharedServices();
+//            services.AddAutoMapper(typeof(CategoryProfile), typeof(UserProfile));
+
+//            services.ConfigureApplicationCookie(options =>
+//            {
+//                options.LoginPath = new PathString("/Admin/Auth/Login");
+//                options.LogoutPath = new PathString("/Admin/Auth/Logout");
+//                options.AccessDeniedPath = new PathString("/Admin/Auth/AccessDenied");
+
+//                options.Cookie = new CookieBuilder()
+//                {
+//                    Name = "BlogProject",
+
+//                    // xss cross site scripting
+//                    /*
+//                     * Asagidaki js kodu ile web page uzerindeki cookie melumatlarini elde etmek mumkundur.
+//                     *
+//                     * {
+//                     *  var cookie=document.cookie;
+//                     *  window.alert(cookie);
+//                     * }
+//                     *
+//                     * Lakin http-only cookie-lere bu qeder asan reach ede bilmirik.
+//                     * bu tip attack-lar XSS (Cross Site Scripting) adlanir.
+//                     */
+//                    HttpOnly = true,
+//                    /*
+//                     * Cross site Request Forgery 'CSRF' attackinin qarshisini almaq ucun istifade edilir,
+//                     * web app-e userlerden elave kiminse her hanssa bir appden her hansisa bir userin cookie
+//                     * melumatindan istifade ederek request ata bilmesinin qarshisini alir.
+//                     */
+//                    SameSite = SameSiteMode.Strict,
+//                    /*
+//                     * sameAsRequest hem http hem https requestleri qebul edir .
+//                     * Duzgun yeni productionda olan app-da  CookieSecurePolicy.Always olmalidir. her zaman https request.
+//                     */
+//                    SecurePolicy = CookieSecurePolicy.SameAsRequest, // Always
+//                };
+
+
+//                options.SlidingExpiration = true;
+//                options.ExpireTimeSpan = System.TimeSpan.FromDays(7);
+//            });
+
+
+//        }
+
+//        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+//        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+//        {
+//            if (env.IsDevelopment())
+//            {
+//                app.UseDeveloperExceptionPage();
+//            }
+//            else
+//            {
+//                app.UseExceptionHandler("/Home/Error");
+//                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+//                app.UseHsts();
+//            }
+
+//            app.UseSession();
+//            app.UseHttpsRedirection();
+//            app.UseStaticFiles();
+
+//            app.UseRouting();
+
+//            app.UseAuthentication();
+//            app.UseAuthorization();
+
+//            app.UseEndpoints(endpoints =>
+//            {
+//                endpoints.MapAreaControllerRoute(
+//                    name: "Admin",
+//                    areaName: "Admin",
+//                    pattern: "Admin/{controller}/{action=Index}/{id?}");
+
+//                endpoints.MapDefaultControllerRoute();
+//            });
+//        }
+//    }
+//}
+
 using Blog.Services.AutoMapper;
 using Blog.Services.Extensions;
 using Blog.Shared.Extensions;
@@ -22,25 +152,41 @@ namespace Blog.WebApp.Core.MVC
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        
+
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
 
-                services.AddControllersWithViews()
-            
-                .AddRazorRuntimeCompilation() // Bununla Viewlarda etdiyimiz(css,html) ani deyisiklikleri yaddasda saxlaya bileceyik. Runtime vaxti
+            services.AddControllersWithViews()
 
-                .AddNewtonsoftJson(options => 
-                {
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; // ic ice olan datalari gorme yeni ignor et
-                }) 
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); //  enumu mene int yox string olaraq qaytar
+            .AddRazorRuntimeCompilation() // Bununla Viewlarda etdiyimiz(css,html) ani deyisiklikleri yaddasda saxlaya bileceyik. Runtime vaxti
+
+            .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; // ic ice olan datalari gorme yeni ignor et
+                })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); //  enumu mene int yox string olaraq qaytar
                 });
 
 
-            services.AddSession(); //????????????????????????
+            services.AddSession();
+            /// <summary>
+            ///
+            /// Biz AJAX ile isleyeceyik deye geriye json dat qaytaracayiq, bu bize bezi cetinlikler yaradir
+            /// (meselen: json datanin icerisinde sonsuz sayda loop edir ve data gelibse onlarin hamsini gosterir amma bizim
+            /// bunlarin hamsini UI gostermeyimiz duzgun deyil, sadece backend de baxanda o datanin movcud olduqunu gormeliyik
+            /// (browseri yuklememek ucun)  javascriptde biz entity adlarini kicik yaziriq, C#  ise boyuk) Bunmetodlardan istifade
+            /// ederek bu probleri rahatliqla aradan qaldirirq ve C# developer ucun daha oxunaqli edirik. (.AddNewtonsoftJson() ve AddJsonOptions() dan sohbet gedir)
+
+            /// </summary>
+
+            services.LoadServices(); //Service layerimizde olan UserManager,CatageroyManager ve s. instancesini yaradan extension
+                                     //metodumuzu caqiririq
+            services.LoadSharedServices(); //Shared layerimizde olan FileHelperin instancesini yaradan extension metodumuzu caqiririq
+
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(UserProfile));
+
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = new PathString("/Admin/Auth/Login");
@@ -88,22 +234,8 @@ namespace Blog.WebApp.Core.MVC
                 options.ExpireTimeSpan = System.TimeSpan.FromDays(7); // hansi muddetden bir cookie yaddasi silinsin.
             });
 
-            /// <summary>
-            ///
-            /// Biz AJAX ile isleyeceyik deye geriye json dat qaytaracayiq, bu bize bezi cetinlikler yaradir
-            /// (meselen: json datanin icerisinde sonsuz sayda loop edir ve data gelibse onlarin hamsini gosterir amma bizim
-            /// bunlarin hamsini UI gostermeyimiz duzgun deyil, sadece backend de baxanda o datanin movcud olduqunu gormeliyik
-            /// (browseri yuklememek ucun)  javascriptde biz entity adlarini kicik yaziriq, C#  ise boyuk) Bunmetodlardan istifade
-            /// ederek bu probleri rahatliqla aradan qaldirirq ve C# developer ucun daha oxunaqli edirik. (.AddNewtonsoftJson() ve AddJsonOptions() dan sohbet gedir)
 
-            /// </summary>
-
-            services.LoadServices(); //Service layerimizde olan UserManager,CatageroyManager ve s. instancesini yaradan extension
-                                     //metodumuzu caqiririq
-            services.LoadSharedServices(); //Shared layerimizde olan FileHelperin instancesini yaradan extension metodumuzu caqiririq
-
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(UserProfile));
-            }
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -118,31 +250,27 @@ namespace Blog.WebApp.Core.MVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization(); //adminin home controllerinde [Authorize(Roles ="Admin")] atributunu qeyd etdikden sonra 
+            app.UseAuthentication(); //adminin home controllerinde [Authorize(Roles ="Admin")] atributunu qeyd etdikden sonra 
             app.UseAuthorization(); //gelib burda bu iki metodu yaziriq. 1 cinin menasi "Sen kimsen?"--- bu metod seni login 
                                     //path=e yonlendirir. ikincinin menasi "Bura girmeye icazen varmi?"---bu metod atribut 
                                     //vasitesi ile senin Admin olub olmadiqi yoxlayir Eger o atributu controllerde qeyd etmesek
                                     //middleware(yeni bu deyqe ilduqumuz hisse) bunu basa dusmez.
 
             app.UseEndpoints(endpoints =>
-
-
             {
-
-
                 endpoints.MapAreaControllerRoute(
                     name: "Admin",
                     areaName: "Admin",
                     pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapDefaultControllerRoute();
-
-
             });
         }
     }

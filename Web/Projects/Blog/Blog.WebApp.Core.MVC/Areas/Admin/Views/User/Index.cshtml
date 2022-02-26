@@ -1,5 +1,7 @@
 ﻿@model IResult<IList<UserDto>>;
-
+@{
+    ViewBag.Title = "User";
+}
 
 @if (Model is { IsSuccess: true })
 {
