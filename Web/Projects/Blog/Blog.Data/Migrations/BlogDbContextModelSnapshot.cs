@@ -143,21 +143,21 @@ namespace Blog.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "5e21ab49-edf0-4870-a4ab-fb372279cde0",
+                            ConcurrencyStamp = "866b2fb9-cb4d-440c-aff9-a00c011849e6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "6edf4b55-0001-4453-b64d-87c7d6735cb1",
+                            ConcurrencyStamp = "f4d1c92a-05fc-4bfc-a9ec-7056ea3112d9",
                             Name = "Editor",
                             NormalizedName = "EDITOR"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "a7568035-7c04-4737-890f-9236482866c9",
+                            ConcurrencyStamp = "c0ff3bfc-e885-4335-b263-4621d2ea8648",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });
@@ -263,16 +263,16 @@ namespace Blog.Data.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Avatar = "Users/defaultUser.png",
-                            ConcurrencyStamp = "46fe86a0-c96a-4040-85fa-be8de74a260f",
+                            ConcurrencyStamp = "e34b713c-1003-4c0d-ad02-c61ad17e8c3f",
                             Email = "memberUser@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MEMBERUSER@GMAIL.COM",
                             NormalizedUserName = "MEMBERUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBWVXHENSgMUgwr9TOIjSEwSMfadeicFJwRZdRJtT42XYfSht0II5SOBkoUdxlQBDw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGtZvBIpz/Fwh2XMeo4DEouAdbNOTuqjXNRtDJ8PsGpVEUHXBDxpsPw21IWeRsMehQ==",
                             PhoneNumber = "+9949999999",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "0ab0bfbd-6635-4997-926e-ddf99a91393b",
+                            SecurityStamp = "5716cc6b-08d6-443a-8d7b-b229f0741cac",
                             TwoFactorEnabled = false,
                             UserName = "memberUser"
                         },
@@ -281,16 +281,16 @@ namespace Blog.Data.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Avatar = "Users/defaultUser.png",
-                            ConcurrencyStamp = "80432d19-a453-451d-b9c5-e6fc08250b5e",
+                            ConcurrencyStamp = "75de4f1d-b75d-4362-92b6-49d0aa79a1fb",
                             Email = "adminUser@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMINUSER@GMAIL.COM",
                             NormalizedUserName = "ADMINUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDnl/pVRGAzGpCtwhLUIboPjGLvI/8SHs9id30195C/eoIS71nAbpT824p/14ztxNA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN3kcd1V7t5MyJQ4E0jdQ/AYNwcUrjOdzwzNNZr6QMnbWcZVaK7SBsV5ZJR8nl1BbQ==",
                             PhoneNumber = "+9949999999",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "5505ca45-b5d3-4636-8d4e-4429597b060e",
+                            SecurityStamp = "69e36672-ab7c-468f-ae14-7fd09b44d612",
                             TwoFactorEnabled = false,
                             UserName = "adminUser"
                         },
@@ -299,16 +299,16 @@ namespace Blog.Data.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Avatar = "Users/defaultUser.png",
-                            ConcurrencyStamp = "f4635db0-09ad-4c9b-99f2-509813b7634f",
+                            ConcurrencyStamp = "238c3850-c3b0-4e74-b355-1f7878d7da7d",
                             Email = "editorUser@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "EDITORUSER@GMAIL.COM",
                             NormalizedUserName = "EDITORUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ2oKsTcZJEBVpovtNdRu/9tUwaTwRrcPj4v2irVdpk7Y+OFeQ4lZU8ZE+v5YHjDbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL3AhQ5BnvenxvrR5Rq+6CKrVV4WGU3hpjWXH6mUWKEOr/p7CAu4CY+G9v9ryI7LSA==",
                             PhoneNumber = "+9949999999",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "94b533d9-ce25-445b-b8eb-8760df922b47",
+                            SecurityStamp = "d0cc1cb5-6e9e-4c95-b52d-658d6ed7a0de",
                             TwoFactorEnabled = false,
                             UserName = "editorUser"
                         });
@@ -373,6 +373,23 @@ namespace Blog.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            RoleId = 3
+                        });
                 });
 
             modelBuilder.Entity("Blog.Entities.Concrete.UserToken", b =>

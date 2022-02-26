@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
 {
-    [Area("Admin")]
     [AllowAnonymous] //
+
+    [Area("Admin")]
     public class AuthController : Controller
     {
         #region fields
@@ -68,6 +69,14 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
              _authService.Logout();
             
             return RedirectToAction("Login","Auth");
+        }
+        #endregion
+
+        #region access denied
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
         #endregion
 
