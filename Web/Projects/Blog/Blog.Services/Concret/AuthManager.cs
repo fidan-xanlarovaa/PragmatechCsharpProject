@@ -47,7 +47,7 @@ namespace Blog.Services.Concret
             var signInResult = await _signInManager.PasswordSignInAsync(user, dto.Password, dto.RememberMe, false);
 
             if (!signInResult.Succeeded)
-                return Error<bool>(BaseLocalization.NoDataAvailableOnRequest); //(BaseLocalization.LoginFailed);
+                return Error<bool>(BaseLocalization.LoginFailed);
 
             return Ok(true);
 

@@ -77,7 +77,7 @@ namespace Blog.Shared.Helpers
 
             // geriye hemiseki kimi Resultcode, Message ve FileDto  qaytariririq
             return new Result<FileDto>(ServiceResultCode.Ok,
-                BaseLocalization.NoDataAvailableOnRequest, new FileDto() //BaseLocalization.ImageUploadedSuccessfully
+                BaseLocalization.ImageUploadedSuccessfully, new FileDto() //BaseLocalization.
                 {
                     FullName = $"{subDirectory}/{uniqueFileName}",
                     FileName = fileName,
@@ -108,7 +108,7 @@ namespace Blog.Shared.Helpers
             };
             File.Delete(path);
 
-            return new Result<FileDto>(ServiceResultCode.Ok, BaseLocalization.NoDataAvailableOnRequest, resultDto); //BaseLocalization.DeletedSuccessfully
+            return new Result<FileDto>(ServiceResultCode.Ok, BaseLocalization.DeletedSuccessfully, resultDto); //BaseLocalization.DeletedSuccessfully
         }
 
         #endregion

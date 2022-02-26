@@ -59,7 +59,7 @@ namespace Blog.Services.Concret
                                                                                || i.NormalizedUserName == dto.UserName.ToUpper());
             if (isAlreadyRegister)
             {
-                return Error<UserDto>(BaseLocalization.NoDataAvailableOnRequest); //(BaseLocalization.AlreadyExistUser);
+                return Error<UserDto>(BaseLocalization.AlreadyExistUser);
             }
 
             var entity = _mapper.Map<User>(dto);
@@ -102,7 +102,7 @@ namespace Blog.Services.Concret
         {
             var entity = await _identityUserManager.FindByIdAsync(id.ToString());
             if (entity is null)
-                return NotFound<UserUpdateDto>(BaseLocalization.NoDataAvailableOnRequest);//(BaseLocalization.NotFoundCodeGeneralMessage);
+                return NotFound<UserUpdateDto>(BaseLocalization.NotFoundCodeGeneralMessage);
             var outputDto = _mapper.Map<UserUpdateDto>(entity);
             return Ok(outputDto);
         }
@@ -121,7 +121,7 @@ namespace Blog.Services.Concret
 
             if (isAlreadyExistUser)
             {
-                return Error<UserDto>(BaseLocalization.NoDataAvailableOnRequest); //(BaseLocalization.AlreadyExistUser);
+                return Error<UserDto>(BaseLocalization.AlreadyExistUser);
             }
 
             var oldFileName = foundedEntity.Avatar;
@@ -165,7 +165,7 @@ namespace Blog.Services.Concret
 
             var entity = await _identityUserManager.FindByIdAsync(id.ToString());
             if (entity is null)
-                return NotFound<UserDto>(BaseLocalization.NoDataAvailableOnRequest); //(BaseLocalization.NotFoundCodeGeneralMessage);
+                return NotFound<UserDto>(BaseLocalization.NotFoundCodeGeneralMessage);
 
             var identityResult = await _identityUserManager.DeleteAsync(entity);
             if (!identityResult.Succeeded)
@@ -177,16 +177,20 @@ namespace Blog.Services.Concret
             return Deleted(outputDto);
         }
 
-        public Task<IResult<IList<UserDto>>> GetAllAsync()
+        public async Task<IResult<IList<UserDto>>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            var entities = await _identityUserManager.Users.ToListAsync();
+            if (entities is null)
+                return NotFound<IList<UserDto>>(BaseLocalization.NoDataAvailableOnRequest);
+            var outputDto = _mapper.Map<IList<UserDto>>(entities);
+            return Ok(outputDto);
         }
 
         public async Task<IResult<PasswordDto>> GetPasswordDtoAsync(int id)
         {
             var entity = await _identityUserManager.FindByIdAsync(id.ToString());
             if (entity is null)
-                return NotFound<PasswordDto>(BaseLocalization.NoDataAvailableOnRequest);//(BaseLocalization.NotFoundCodeGeneralMessage);
+                return NotFound<PasswordDto>(BaseLocalization.NotFoundCodeGeneralMessage);
             var outputDto = _mapper.Map<PasswordDto>(entity);
             return Ok(outputDto);
         }

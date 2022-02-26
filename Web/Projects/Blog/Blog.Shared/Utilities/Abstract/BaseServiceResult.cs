@@ -20,17 +20,17 @@ namespace Blog.Shared.Utilities.Abstract
 
         protected IResult<TResult> Created<TResult>(TResult entity)
         {
-            return new Result<TResult>(ServiceResultCode.Created,BaseLocalization.NoDataAvailableOnRequest,entity);
+            return new Result<TResult>(ServiceResultCode.Created,BaseLocalization.CreatedSuccessfully,entity);
         }
 
         protected IResult<TResult> Updated<TResult>(TResult outPut)
         {
-            return new Result<TResult>(ServiceResultCode.Updated, BaseLocalization.NoDataAvailableOnRequest, outPut);
+            return new Result<TResult>(ServiceResultCode.Updated, BaseLocalization.UpdatedSuccesfully, outPut);
         }
        
         protected IResult<TResult> Deleted<TResult>(TResult output)
         {
-            return new Result<TResult>(ServiceResultCode.Deleted, BaseLocalization.NoDataAvailableOnRequest, output);
+            return new Result<TResult>(ServiceResultCode.Deleted, BaseLocalization.DeletedSuccessfully, output);
         }
 
         protected IResult<TResult> Error<TResult>(params string[] errors)
