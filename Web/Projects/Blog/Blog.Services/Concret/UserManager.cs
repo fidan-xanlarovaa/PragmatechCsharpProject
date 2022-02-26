@@ -47,16 +47,7 @@ namespace Blog.Services.Concret
         #endregion
 
         #region QUERY
-
-
-        public async Task<IResult<IList<UserDto>>> GetAllAsync()
-        {
-            var entities = await _identityUserManager.Users.ToListAsync();
-            if (entities is null)
-                return NotFound<IList<UserDto>>(BaseLocalization.NoDataAvailableOnRequest);
-            var outputDto = _mapper.Map<IList<UserDto>>(entities);
-            return Ok(outputDto);
-        }
+        
         #endregion
 
         #region CRUD
@@ -115,6 +106,8 @@ namespace Blog.Services.Concret
             var outputDto = _mapper.Map<UserUpdateDto>(entity);
             return Ok(outputDto);
         }
+
+        
 
         public async Task<IResult<UserDto>> UpdateAsync(UserUpdateDto dto, string modifiedByName)
         {
@@ -183,6 +176,22 @@ namespace Blog.Services.Concret
             var outputDto = _mapper.Map<UserDto>(entity);
             return Deleted(outputDto);
         }
+
+        public Task<IResult<IList<UserDto>>> GetAllAsync()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<IResult<PasswordDto>> GetPasswordDtoAsync(int id)
+        {
+            var entity = await _identityUserManager.FindByIdAsync(id.ToString());
+            if (entity is null)
+                return NotFound<PasswordDto>(BaseLocalization.NoDataAvailableOnRequest);//(BaseLocalization.NotFoundCodeGeneralMessage);
+            var outputDto = _mapper.Map<PasswordDto>(entity);
+            return Ok(outputDto);
+        }
+
+        
         #endregion
 
     }

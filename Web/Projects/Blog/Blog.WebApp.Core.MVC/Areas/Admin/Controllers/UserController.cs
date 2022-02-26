@@ -138,7 +138,19 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
         }
         #endregion
 
+        #region change password
+        [HttpGet]
+        [Authorize(Roles = "Admin,Editor,Member")]
+
+        public async Task<IActionResult> ChangePassword()
+        {
+            //var result = await _service.GetUpdateDtoAsync(id);
+
+            return PartialView("_ChangePasswordPartial");
+        }
+
         #endregion
 
+        #endregion
     }
 }
