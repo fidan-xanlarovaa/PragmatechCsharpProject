@@ -138,6 +138,29 @@ namespace Blog.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "866b2fb9-cb4d-440c-aff9-a00c011849e6",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "f4d1c92a-05fc-4bfc-a9ec-7056ea3112d9",
+                            Name = "Editor",
+                            NormalizedName = "EDITOR"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcurrencyStamp = "c0ff3bfc-e885-4335-b263-4621d2ea8648",
+                            Name = "Member",
+                            NormalizedName = "MEMBER"
+                        });
                 });
 
             modelBuilder.Entity("Blog.Entities.Concrete.RoleClaim", b =>
@@ -233,6 +256,62 @@ namespace Blog.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 3,
+                            AccessFailedCount = 0,
+                            Avatar = "Users/defaultUser.png",
+                            ConcurrencyStamp = "e34b713c-1003-4c0d-ad02-c61ad17e8c3f",
+                            Email = "memberUser@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MEMBERUSER@GMAIL.COM",
+                            NormalizedUserName = "MEMBERUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGtZvBIpz/Fwh2XMeo4DEouAdbNOTuqjXNRtDJ8PsGpVEUHXBDxpsPw21IWeRsMehQ==",
+                            PhoneNumber = "+9949999999",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "5716cc6b-08d6-443a-8d7b-b229f0741cac",
+                            TwoFactorEnabled = false,
+                            UserName = "memberUser"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            Avatar = "Users/defaultUser.png",
+                            ConcurrencyStamp = "75de4f1d-b75d-4362-92b6-49d0aa79a1fb",
+                            Email = "adminUser@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMINUSER@GMAIL.COM",
+                            NormalizedUserName = "ADMINUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN3kcd1V7t5MyJQ4E0jdQ/AYNwcUrjOdzwzNNZr6QMnbWcZVaK7SBsV5ZJR8nl1BbQ==",
+                            PhoneNumber = "+9949999999",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "69e36672-ab7c-468f-ae14-7fd09b44d612",
+                            TwoFactorEnabled = false,
+                            UserName = "adminUser"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccessFailedCount = 0,
+                            Avatar = "Users/defaultUser.png",
+                            ConcurrencyStamp = "238c3850-c3b0-4e74-b355-1f7878d7da7d",
+                            Email = "editorUser@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EDITORUSER@GMAIL.COM",
+                            NormalizedUserName = "EDITORUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL3AhQ5BnvenxvrR5Rq+6CKrVV4WGU3hpjWXH6mUWKEOr/p7CAu4CY+G9v9ryI7LSA==",
+                            PhoneNumber = "+9949999999",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "d0cc1cb5-6e9e-4c95-b52d-658d6ed7a0de",
+                            TwoFactorEnabled = false,
+                            UserName = "editorUser"
+                        });
                 });
 
             modelBuilder.Entity("Blog.Entities.Concrete.UserClaim", b =>
@@ -294,6 +373,23 @@ namespace Blog.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            RoleId = 3
+                        });
                 });
 
             modelBuilder.Entity("Blog.Entities.Concrete.UserToken", b =>

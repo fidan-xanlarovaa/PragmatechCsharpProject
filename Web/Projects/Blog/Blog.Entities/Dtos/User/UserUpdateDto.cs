@@ -14,26 +14,26 @@ namespace Blog.Entities.Dtos.User
         [Required]
         public int Id { get; set; }
 
-        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization..Username
-        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.RequiredErrorMessage
-        [MaxLength(50, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MaxLengthErrorMessage
-        [MinLength(3, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MinLengthErrorMessage
+        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.UserName))]//BaseLocalization..
+        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.RequiredErrorMessage))]//BaseLocalization.RequiredErrorMessage
+        [MaxLength(50, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MaxLengthErrorMessage1))]//BaseLocalization.MaxLengthErrorMessage1
+        [MinLength(3, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MinLengthErrorMessage1))]//BaseLocalization.
         public string UserName { get; set; }
 
-        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.Email
-        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.RequiredErrorMessage
-        [MaxLength(100, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MaxLengthErrorMessage
-        [MinLength(10, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MinLengthErrorMessage
+        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.Email))]//BaseLocalization.Email
+        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.RequiredErrorMessage))]//BaseLocalization.RequiredErrorMessage
+        [MaxLength(100, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MaxLengthErrorMessage1))]//BaseLocalization.MaxLengthErrorMessage
+        [MinLength(10, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MinLengthErrorMessage1))]//BaseLocalization.MinLengthErrorMessage
         [DataType(DataType.EmailAddress, ErrorMessage = "")]
         public string Email { get; set; }
 
         /// <summary>
         /// +99455 666 66 66
         /// </summary>
-        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.NoDataAvailableOnRequest))]// BaseLocalization.PhoneNumber
-        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]// BaseLocalization.RequiredErrorMessage
-        [MaxLength(13, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MaxLengthErrorMessage
-        [MinLength(13, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.NoDataAvailableOnRequest))]//BaseLocalization.MinLengthErrorMessage
+        [Display(ResourceType = typeof(BaseLocalization), Name = nameof(BaseLocalization.PhoneNumber))]// BaseLocalization.PhoneNumber
+        [Required(ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.RequiredErrorMessage))]// BaseLocalization.RequiredErrorMessage
+        [MaxLength(13, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MaxLengthErrorMessage1))]//BaseLocalization.MaxLengthErrorMessage
+        [MinLength(13, ErrorMessageResourceType = typeof(BaseLocalization), ErrorMessageResourceName = nameof(BaseLocalization.MinLengthErrorMessage1))]//BaseLocalization.MinLengthErrorMessage
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 

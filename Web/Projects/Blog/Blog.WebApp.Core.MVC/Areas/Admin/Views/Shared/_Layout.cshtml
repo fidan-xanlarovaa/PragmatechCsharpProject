@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Blog Project Dashboard | @ViewBag.Title</title>
     @await Html.PartialAsync("_StylesPartial")
 </head>
 <body class="sb-nav-fixed">
@@ -27,16 +27,18 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Activity Log</a>
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" asp-area="Admin" asp-controller="DefaultUser" asp-action="ChangePassword">Change Password</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <!--<button class="btn btn-primary" type="submit">Logout</button> -->
+                    <a class="dropdown-item"  asp-area="Admin" asp-controller="Auth" asp-action="Logout">Logout</a>
+
                 </div>
             </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
-        @await Html.PartialAsync("_LayoutSideNavPartial")
+        @await Component.InvokeAsync("LeftSideBar")
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
@@ -60,7 +62,7 @@
     @await Html.PartialAsync("_ScriptsPartial")
     @await RenderSectionAsync("Scripts", false)
     <!--Bunu yazmaqla biz demek isteyirik ki, biz eger bu sehife ucun  her hansi bir js yazsaq onu burda
-                                                     tetbiq elesin. False o demekdir ki, butun sehifelere  aid etmeyine ehtiyac yoxdur. Yalnizca bu 
+                                                     tetbiq elesin. False o demekdir ki, butun sehifelere  aid etmeyine ehtiyac yoxdur. Yalnizca bu
                                                      sehifede olsun-->
 
 </body>

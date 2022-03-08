@@ -14,7 +14,9 @@ namespace Blog.Services.AutoMapper
                 CreateMap<User, UserUpdateDto>();
                 CreateMap<UserAddDto, User>();
                 CreateMap<UserUpdateDto, User>();
-            }
+                CreateMap<PasswordDto, User>();
+                CreateMap<User, PasswordDto>();
+        }
         }
     
 }

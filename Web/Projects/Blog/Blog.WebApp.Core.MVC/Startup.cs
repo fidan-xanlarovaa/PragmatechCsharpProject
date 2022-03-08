@@ -1,3 +1,5 @@
+
+using System.Text.Json.Serialization;
 using Blog.Services.AutoMapper;
 using Blog.Services.Extensions;
 using Blog.Shared.Extensions;
@@ -22,25 +24,41 @@ namespace Blog.WebApp.Core.MVC
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        
+
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
 
-                services.AddControllersWithViews()
-            
-                .AddRazorRuntimeCompilation() // Bununla Viewlarda etdiyimiz(css,html) ani deyisiklikleri yaddasda saxlaya bileceyik. Runtime vaxti
+            services.AddControllersWithViews()
 
-                .AddNewtonsoftJson(options => 
-                {
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; // ic ice olan datalari gorme yeni ignor et
-                }) 
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); //  enumu mene int yox string olaraq qaytar
+            .AddRazorRuntimeCompilation() // Bununla Viewlarda etdiyimiz(css,html) ani deyisiklikleri yaddasda saxlaya bileceyik. Runtime vaxti
+
+            .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; // ic ice olan datalari gorme yeni ignor et
+                })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); //  enumu mene int yox string olaraq qaytar
                 });
 
 
-            services.AddSession(); //????????????????????????
+            services.AddSession();
+            /// <summary>
+            ///
+            /// Biz AJAX ile isleyeceyik deye geriye json dat qaytaracayiq, bu bize bezi cetinlikler yaradir
+            /// (meselen: json datanin icerisinde sonsuz sayda loop edir ve data gelibse onlarin hamsini gosterir amma bizim
+            /// bunlarin hamsini UI gostermeyimiz duzgun deyil, sadece backend de baxanda o datanin movcud olduqunu gormeliyik
+            /// (browseri yuklememek ucun)  javascriptde biz entity adlarini kicik yaziriq, C#  ise boyuk) Bunmetodlardan istifade
+            /// ederek bu probleri rahatliqla aradan qaldirirq ve C# developer ucun daha oxunaqli edirik. (.AddNewtonsoftJson() ve AddJsonOptions() dan sohbet gedir)
+
+            /// </summary>
+
+            services.LoadServices(); //Service layerimizde olan UserManager,CatageroyManager ve s. instancesini yaradan extension
+                                     //metodumuzu caqiririq
+            services.LoadSharedServices(); //Shared layerimizde olan FileHelperin instancesini yaradan extension metodumuzu caqiririq
+
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(UserProfile));
+
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = new PathString("/Admin/Auth/Login");
@@ -88,22 +106,8 @@ namespace Blog.WebApp.Core.MVC
                 options.ExpireTimeSpan = System.TimeSpan.FromDays(7); // hansi muddetden bir cookie yaddasi silinsin.
             });
 
-            /// <summary>
-            ///
-            /// Biz AJAX ile isleyeceyik deye geriye json dat qaytaracayiq, bu bize bezi cetinlikler yaradir
-            /// (meselen: json datanin icerisinde sonsuz sayda loop edir ve data gelibse onlarin hamsini gosterir amma bizim
-            /// bunlarin hamsini UI gostermeyimiz duzgun deyil, sadece backend de baxanda o datanin movcud olduqunu gormeliyik
-            /// (browseri yuklememek ucun)  javascriptde biz entity adlarini kicik yaziriq, C#  ise boyuk) Bunmetodlardan istifade
-            /// ederek bu probleri rahatliqla aradan qaldirirq ve C# developer ucun daha oxunaqli edirik. (.AddNewtonsoftJson() ve AddJsonOptions() dan sohbet gedir)
 
-            /// </summary>
-
-            services.LoadServices(); //Service layerimizde olan UserManager,CatageroyManager ve s. instancesini yaradan extension
-                                     //metodumuzu caqiririq
-            services.LoadSharedServices(); //Shared layerimizde olan FileHelperin instancesini yaradan extension metodumuzu caqiririq
-
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(UserProfile));
-            }
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -118,31 +122,27 @@ namespace Blog.WebApp.Core.MVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization(); //adminin home controllerinde [Authorize(Roles ="Admin")] atributunu qeyd etdikden sonra 
+            app.UseAuthentication(); //adminin home controllerinde [Authorize(Roles ="Admin")] atributunu qeyd etdikden sonra 
             app.UseAuthorization(); //gelib burda bu iki metodu yaziriq. 1 cinin menasi "Sen kimsen?"--- bu metod seni login 
                                     //path=e yonlendirir. ikincinin menasi "Bura girmeye icazen varmi?"---bu metod atribut 
                                     //vasitesi ile senin Admin olub olmadiqi yoxlayir Eger o atributu controllerde qeyd etmesek
                                     //middleware(yeni bu deyqe ilduqumuz hisse) bunu basa dusmez.
 
             app.UseEndpoints(endpoints =>
-
-
             {
-
-
                 endpoints.MapAreaControllerRoute(
                     name: "Admin",
                     areaName: "Admin",
                     pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapDefaultControllerRoute();
-
-
             });
         }
     }

@@ -1,7 +1,9 @@
 ﻿using Blog.Data.Concrete.EntityFramework.Context;
 using Blog.Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace Blog.Data.Concrete.EntitiyFramework.Configurations
 {
@@ -46,8 +48,80 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
 
             // Each User can have many entries in the UserRole join table
             builder.HasMany<UserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
+
+            // seed 
+            var admin = new User()
+            {
+                Id = 1,
+                UserName = "adminUser",
+                NormalizedUserName = "ADMINUSER",
+                Email = "adminUser@gmail.com",
+                NormalizedEmail = "ADMINUSER@GMAIL.COM",
+                PhoneNumber = "+9949999999",
+                Avatar = "Users/defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString(),
+            };
+
+            admin.PasswordHash = CreatePasswordHash(admin, "Admin123!User"); // password (identitynin paswordhasherinden istifade edirik)
+
+
+            var editor = new User()
+            {
+                Id = 2,
+                UserName = "editorUser",
+                NormalizedUserName = "EDITORUSER",
+                Email = "editorUser@gmail.com",
+                NormalizedEmail = "EDITORUSER@GMAIL.COM",
+                PhoneNumber = "+9949999999",
+                Avatar = "Users/defaultUser.png",
+                EmailConfirmed = true,// Ozumuz elle yardiriq dey email confirmation istemirik, bir basa true veririk.
+                                      // Normal userler ise qeydiyyatdan kecenden ve oz email-lerini confirm etdikden
+                                      // sonra bu parametr true-ya cevrilir
+
+                PhoneNumberConfirmed = true,// Ozumuz elle yardiriq dey phone confirmation istemirik, bir basa true veririk.
+                                            // Normal userler ise qeydiyyatdan kecenden ve oz phone-lerini confirm etdikden
+                                            // sonra bu parametr true-ya cevrilir
+
+                SecurityStamp = Guid.NewGuid().ToString(), // Security cehetden Token yaradiriqki, User uzerinde her hansi
+                                                           // deyisklik olanda bas aduse bilsinki bu hemen userdir yoxsa yox
+
+            };
+            editor.PasswordHash = CreatePasswordHash(editor, "Editor123!User");
+
+            var member = new User()
+            {
+                Id = 3,
+                UserName = "memberUser",
+                NormalizedUserName = "MEMBERUSER",
+                Email = "memberUser@gmail.com",
+                NormalizedEmail = "MEMBERUSER@GMAIL.COM",
+                PhoneNumber = "+9949999999",
+                Avatar = "Users/defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString(),
+
+            };
+            member.PasswordHash = CreatePasswordHash(member, "Member123!User"); //memberin PasswordHash propertisine
+                                                                                //CreatePasswordHash(editor, "Member123!User")
+                                                                                //deyerini verdik icerisine userimizi ve
+                                                                                //verceyimiz paswordu oturduk
+
+            builder.HasData(member, admin, editor);
         }
+
+        private string CreatePasswordHash(User user, string password)
+        {
+            var passwordHasher = new PasswordHasher<User>();
+            return passwordHasher.HashPassword(user, password); // paswordu hashlenmis formada geri qaytarir. Cunki biz databasede
+                                                                // passwordleri aciq formada saxlamiriqki, sabah databemizi eger
+                                                                // hacklenerse hemen hacker o passwordlari aciq sekilde gore bilmesin 
+        }
+        
     }
+}
     //public class UserConfiguration : IEntityTypeConfiguration<User>
     //{
     //    public void Configure(EntityTypeBuilder<User> builder)
@@ -111,4 +185,4 @@ namespace Blog.Data.Concrete.EntitiyFramework.Configurations
     //    }
     //}
 
-}
+

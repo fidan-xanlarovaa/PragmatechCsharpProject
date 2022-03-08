@@ -2,6 +2,7 @@
 using Blog.Services.Abstract;
 using Blog.Shared.Extensions;
 using Blog.WebApp.Core.MVC.Areas.Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ using System.Threading.Tasks;
 namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
+    //[Authorize]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         #region fields
@@ -136,7 +138,19 @@ namespace Blog.WebApp.Core.MVC.Areas.Admin.Controllers
         }
         #endregion
 
+        #region change password
+        [HttpGet]
+        [Authorize(Roles = "Admin,Editor,Member")]
+
+        public async Task<IActionResult> ChangePassword()
+        {
+            //var result = await _service.GetUpdateDtoAsync(id);
+
+            return PartialView("_ChangePasswordPartial");
+        }
+
         #endregion
 
+        #endregion
     }
 }
